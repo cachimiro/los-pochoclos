@@ -1,0 +1,31 @@
+[
+  {"name": "Antigone Curry",
+      "discription":"CEO founder and owner of Los Pochocolos",
+      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
+      "url": "antigone"
+  },
+  {
+      "name": "Reynaldo Santos",
+      "discription":"General Manager",
+      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
+      "url": "reynaldo"
+  },
+   {
+      "name": "Yanelis Santos",
+      "discription":"Chef and house keeper",
+      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
+      "url": "yanelis"
+  },
+   {
+      "name": "Dayner Torregroza",
+      "discription":"Maintance and gardener",
+      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
+      "url": "dayner"
+  },
+  {
+       "name": "Johann Aguirre",
+      "discription":"IT Administrator and Developer",
+      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
+      "url": "johann"
+  }
+]

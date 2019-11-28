@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+<h2>{{ page_title }}</h2>
+<p>
+    Los Pocholos, located at 7 minute drive from Mingeuo, near Palomino. 2 hrs by bus from Santa Marta or 1.5 hrs from Riohacha. The finca is a comfortable house with large bedrooms set in a garden; both fan and air conditioned options are available,. The
+    ocean (a kilometer of totally unspoilt Caribbean beach fringed with palm trees) is 100 metres away, a place where you can sit back and enjoy roaring waves at night, the river running on one side of the finca with fisherman passing twice a day thet
+    deliver local fresh fish. There is a cook who serves delicious and inexpensive fresh meals, including fresh fish, plaintains, and fruit juices from the garden.
+</p>
+<h2>Meet The Team</h2>
+{% for member in company %}
+
+
+
+<div class="row featurette">
+    
+    {% if loop.index % 2 !=0 %}
+    <div class="col-md-7">
+        
+        <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+        <p>{{ member.discription }}</p>
+    </div>
+     <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="{{ member.image_source }}"/ >
+        </div>
+        {% else %}
+         
+     <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="{{ member.image_source }}" />
+        </div>
+        <div class="col-md-7">
+        
+        <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+        <p>{{ member.discription }}</p>
+    </div>
+        {% endif %}
+</div>
+
+{% if loop.index !=5 %}
+<hr class="featurette-divider">
+{% endif %}
+{% endfor %}
+
+
+{% endblock %}
