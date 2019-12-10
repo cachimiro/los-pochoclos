@@ -42,10 +42,13 @@ def contact():
     return render_template("contact.html", page_title="Contact")
 
 
-
 @app.route('/careers')
 def careers():
-    return render_template("careers.html", page_title="Careers")
+   return render_template("careers.html", page_title="careers")
+
+@app.route('/charity')
+def charity():
+   return render_template("charity.html", page_title="charity")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
