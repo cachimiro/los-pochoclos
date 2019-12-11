@@ -1,60 +1,64 @@
-{% extends 'base.html' %} {% block content %}
 
+
+{% extends 'base.html' %} {% block content %}
+<div class="container">
 <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-            <a href="post.html">
-                <h2 class="post-title">
-                    Man must explore, and this is exploration at its greatest
-                </h2>
-                <h3 class="post-subtitle">
-                    Problems look mighty small from 150 miles up
-                </h3>
-            </a>
-            <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a> on September 24, 2017</p>
+    <div class="col-sm-12 col-lg-12 col-md-12 ">
+        <h3>Los Pochocolos</h3>
+        <p>  Los Pocholos, located at 7 minute drive from Mingeuo, near Palomino. 2 hrs by bus from Santa Marta or 1.5 hrs from Riohacha. The finca offers a comfortable house with large bedrooms set in a garden; both fan and air conditioned options are available. The
+    ocean at a 5 minute walk from the finca; (a kilometer of totally unspoilt Caribbean beach fringed with palm trees), a place where you can sit back feel the carabean breeze, have fresh coconut water and enjoy the relaxing roar from waves at night. there is a river running on one side of the finca with fisherman passing twice a day that
+    deliver local fresh fish. we serve delicious and inexpensive fresh meals, including fresh fish, meats, plantains, yuca, and other products gromwn in Colombia, we also ofer <strong>Vegetarian options,</strong> fruit juices. all of our products are sourced locally.
+     We also rearange airpor pick up if needed, just lets us know if you need it. We provide a range of transports if you want to vivit the Tayrona National park,
+     if you would like to go Flamingo watching, or any other activities we will sort transport for you. so there is no need to worry. just drop 
+     us a email or speack to a memeber of staff on arrival. and will sort it out for you</p>
+           </div>         
         </div>
         <hr>
         <div class="post-preview">
-            <a href="post.html">
+            <a href="{{ url_for('charity') }}">
                 <h2 class="post-title">
-                    I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-                </h2>
-            </a>
-            <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a> on September 18, 2017</p>
+                    Tanya's Paz charity: </h2><p>  A charity ispired by <strong>Tanya Angelica Aguirre Curry</strong> and devoloped by <strong>Antigone Curry.</strong>
+                    (mother) of Tanya</p>
+               
+            
         </div>
         <hr>
         <div class="post-preview">
-            <a href="post.html">
-                <h2 class="post-title">
+            <a href="#">
+                <h2 class="#">
                     Science has not yet mastered prophecy
                 </h2>
-                <h3 class="post-subtitle">
+                <p class="#">
                     We predict too much for the next year and yet far too little for the next ten.
-                </h3>
+                </p>
             </a>
-            <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a> on August 24, 2017</p>
+           
         </div>
         <hr>
         <div class="post-preview">
             <a href="post.html">
-                <h2 class="post-title">
+                <h2 class="#">
                     Failure is not an option
                 </h2>
-                <h3 class="post-subtitle">
+                <p class="#">
                     Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                </h3>
+                </p>
             </a>
-            <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a> on July 8, 2017</p>
+          
         </div>
         <hr>
         <!-- Pager -->
         <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            <a class="btn btn-primary float-right col-sm-6 col-md-4 col-lg-4" href="{{url_for('get_reviews')}} ">view reviews &rarr;</a>
+            <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('add_review')}}">Add a review</a>
         </div>
     </div>
 </div>
+<!----just commeting out this section for the chat
+<form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <button>Go to chat!</button>
+        </form>
+        ------->
 {% endblock %}

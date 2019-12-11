@@ -1,0 +1,27 @@
+<style type="text/css">
+    h2{
+    text-align: center;
+    }
+    h1{
+    text-align: center;
+    margin: 30px;
+    padding-bottom: 25px;
+    }
+    .hide-reviews{
+    display: none;
+    }
+</style>
+{% extends 'base.html' %} {% block content %}
+
+<h1>Reviews</h1>
+
+ {% for opinion in opinion %}
+                   <h2> {{ opinion.name }} 
+                    {{ opinion.surname }} </h2>
+                   <h3>{{ opinion.Title}} </h3>
+                   <p> {{ opinion.Opinion }}</p>
+                   <hr>
+              {% endfor %}
+              
+<a class="btn btn-primary float-left col-sm-6" href="{{url_for('add_review')}}">Add a review</a>
+{% endblock %}

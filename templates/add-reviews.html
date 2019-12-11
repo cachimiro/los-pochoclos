@@ -1,0 +1,48 @@
+<style>
+  .form-control{
+      padding: 20px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  } 
+  .btn-primary{
+      margin: 20px;
+      text-align: left;
+  }
+ 
+</style>
+
+{% extends 'base.html' %} {% block content %}
+<h1> Add a review</h1>
+<h3>Tell us How me made you feel</h3>
+<form action="{{ url_for('insert_task') }}" method="POST" class="col-12">
+        <div class="row">
+            <div class="col">
+                <input type="text" id="name" name="name" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" id="surname" name="surname" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" id="Title" name="Title" class="form-control" placeholder="Title">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            <textarea id="Opinion" name="Opinion" class="form-control" aria-label="With textarea" placeholder="Write a review"></textarea>
+        </div>
+         <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            <textarea id="how_would_you_improve_it" name="how_would_you_improve_it" class="form-control" aria-label="With textarea" placeholder="Tell us how can we inprove it"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add review</button>
+        </form>
+    
+        
+
+        {% endblock %}
