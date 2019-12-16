@@ -7,9 +7,10 @@
     margin: 30px;
     padding-bottom: 25px;
     }
-    .hide-reviews{
-    display: none;
+    .hide-content{
+     display: none;
     }
+    
 </style>
 {% extends 'base.html' %} {% block content %}
 
@@ -19,9 +20,32 @@
                    <h2> {{ opinion.name }} 
                     {{ opinion.surname }} </h2>
                    <h3>{{ opinion.Title}} </h3>
-                   <p> {{ opinion.Opinion }}</p>
+                   <p id="always-show">{{ opinion.Opinion|truncate(200)}}</p>
+                    <p class="hide-content">{{ opinion.Opinion }}</p>
+                  <button id="readMore">Read more</button>
                    <hr>
+                   
               {% endfor %}
               
 <a class="btn btn-primary float-left col-sm-6" href="{{url_for('add_review')}}">Add a review</a>
+<script>
+function showRestOfReview (){
+ var showRestOfReview = document.getElementsByClassName("hide-content");
+ var button = document.getElementById("readMore");
+ var alwaysShow = document.getElementById("always-show");
+ if(alwaysShow.style.display === "inline"){
+    showRestOfReview.style.display = "none";
+    button.classList.toggle("showRestOfReview");
+    
+  
+ }else{
+  alwaysShow.style.display = "none";
+  button.innerHTML = "Read Less";
+  showRestOfReview.style.display = "inline";
+ }
+ 
+}
+ 
+</script>
+
 {% endblock %}

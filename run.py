@@ -1,8 +1,10 @@
 import os
 import json
+import click
 from flask import Flask, render_template, request,redirect, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'reviews'
@@ -15,7 +17,9 @@ app.secret_key = "cachimiro"
 @app.route('/view_reviews')
 def get_reviews():
     return render_template("reviews.html", opinion=mongo.db.opinion.find())
-    
+ # code to shorten reviews so they are not to overwelming 
+
+        # TODO: write code...
 # this line of code will allow costumesr to add reviews
 @app.route('/add_review')
 def add_review():
@@ -65,9 +69,9 @@ def contact():
     return render_template("contact.html", page_title="Contact")
 
 
-@app.route('/careers')
-def careers():
-   return render_template("careers.html", page_title="careers")
+@app.route('/rooms')
+def rooms():
+   return render_template("rooms.html", page_title="Rooms")
 
 @app.route('/charity')
 def charity():
