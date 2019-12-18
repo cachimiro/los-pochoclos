@@ -1,51 +1,54 @@
 <style type="text/css">
-    h2{
-    text-align: center;
-    }
-    h1{
-    text-align: center;
-    margin: 30px;
-    padding-bottom: 25px;
-    }
-    .hide-content{
-     display: none;
-    }
-    
+ h2 {
+  text-align: center;
+ }
+
+ h1 {
+  text-align: center;
+  margin: 30px;
+  padding-bottom: 25px;
+ }
+ .hide-all-text{
+  display: none;
+ }
+ 
 </style>
 {% extends 'base.html' %} {% block content %}
 
 <h1>Reviews</h1>
 
- {% for opinion in opinion %}
-                   <h2> {{ opinion.name }} 
-                    {{ opinion.surname }} </h2>
-                   <h3>{{ opinion.Title}} </h3>
-                   <p id="always-show">{{ opinion.Opinion|truncate(200)}}</p>
-                    <p class="hide-content">{{ opinion.Opinion }}</p>
-                  <button id="readMore">Read more</button>
-                   <hr>
-                   
-              {% endfor %}
-              
-<a class="btn btn-primary float-left col-sm-6" href="{{url_for('add_review')}}">Add a review</a>
+{% for opinion in opinion %}
+<h2> {{ opinion.name }} {{ opinion.surname }} </h2>
+<h3>{{ opinion.Title}} </h3>
+<p class="{{ opinion._id }} ">{{ opinion.Opinion|truncate(200, True)}}</p>
+<p id="{{ opinion._id }}" class="hide-all-text">{{ opinion.Opinion }}</p>
+
+<button onclick="showMore('{{ opinion._id}}')">Show more</button>
+<button type="button" id="hide">Read less</button>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-function showRestOfReview (){
- var showRestOfReview = document.getElementsByClassName("hide-content");
- var button = document.getElementById("readMore");
- var alwaysShow = document.getElementById("always-show");
- if(alwaysShow.style.display === "inline"){
-    showRestOfReview.style.display = "none";
-    button.classList.toggle("showRestOfReview");
-    
-  
- }else{
-  alwaysShow.style.display = "none";
-  button.innerHTML = "Read Less";
-  showRestOfReview.style.display = "inline";
- }
+
+ function showMore(id) {
+  var y = document.getElementsByClassName("{{ opinion._id }}");
+  var x = document.getElementById("{{ opinion._id }}");
+document.getElementById(id).click();
+if (x.style.display === "block") {
+    y.style.display === "none";
+    x.style.display === "block";
+} else {
+ x.style.display === "none";
  
 }
- 
+
+}
+
+
+
 </script>
+<hr> {% endfor %}
+
+<a class="btn btn-primary float-left col-sm-6" href="{{url_for('add_review')}}">Add a review</a>
+
+
 
 {% endblock %}

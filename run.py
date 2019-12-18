@@ -17,6 +17,9 @@ app.secret_key = "cachimiro"
 @app.route('/view_reviews')
 def get_reviews():
     return render_template("reviews.html", opinion=mongo.db.opinion.find())
+    
+
+    
  # code to shorten reviews so they are not to overwelming 
 
         # TODO: write code...
@@ -76,13 +79,45 @@ def rooms():
 @app.route('/charity')
 def charity():
    return render_template("charity.html", page_title="charity")
+   
+@app.route('/administration')
+def Admin_update_reviews_and_more():
+   return render_template("admin.html")
+   
+# this line of code is for the managers to update their reviews and delete them
+@app.route('/edit_review/<opinion_id>')
+def edit_review(opinion_id):
+    the_opinion =  mongo.db.opinion.find_one({"_id": ObjectId(opinion_id)})
+    return render_template('admin.html', opinion=the_opinion)
+                           
+                           
+@app.route('/update_opinion/<opinion_id>', methods=["POST"])
+def update_opinion(opinion_id):
+    opinion = mongo.db.opinion
+    opinion.update( {'_id': ObjectId(opinion_id)},
+    {
+        'name':request.form.get('name'),
+        'surname':request.form.get('surname'),
+        'Title': request.form.get('Title'),
+        'Opinion': request.form.get('Opinion'),
+        'how_would_you_improve_it':request.form.get('how_would_you_improve_it')
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+
+
+@app.route('/delete_opinion/<opinion_id>')
+def delete_opinion(opinion_id):
+    mongo.db.opinion.remove({'_id': ObjectId(opinion_id)})
+    return redirect(url_for('Admin_update_reviews_and_more'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
             
-            
+   
+         
 # chat function will go here all the code thats going to be provided from here is for that chat area
 #pesonal note i will coment out this section for a moment need to work on other html 
 """
