@@ -82,13 +82,13 @@ def charity():
    
 @app.route('/administration')
 def Admin_update_reviews_and_more():
-   return render_template("admin.html")
+   return render_template("admin.html", opinion=mongo.db.opinion.find())
    
 # this line of code is for the managers to update their reviews and delete them
 @app.route('/edit_review/<opinion_id>')
 def edit_review(opinion_id):
     the_opinion =  mongo.db.opinion.find_one({"_id": ObjectId(opinion_id)})
-    return render_template('admin.html', opinion=the_opinion)
+    return render_template('update.html', opinion=the_opinion)
                            
                            
 @app.route('/update_opinion/<opinion_id>', methods=["POST"])

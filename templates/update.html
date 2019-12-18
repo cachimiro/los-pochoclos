@@ -14,8 +14,8 @@ a{
 {% extends 'base.html' %} {% block content %}
 <h3> Administration </h3>
 
-{% for opinion in opinion %}
 
+<form action="{{ url_for('Admin_update_reviews_and_more', opinion_id=opinion._id) }}" method="POST">
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingThree" , "{{ opinion._id }}">
@@ -23,12 +23,10 @@ a{
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           <h3> {{ opinion.name }} {{ opinion.surname }} </h3>
           <h4>{{ opinion.Title}} </h4>
-          <a href="{{url_for('edit_review', opinion_id=opinion._id)}}">
-           <button type="button" class="btn pull-right btn-primary">Edit</button>
-           </a>
-           <a hrer="{{url_for('delete_opinion', opinion_id=opinion._id)}}">
-           <button type="button" class="btn pull-right btn-danger">Delete</button>
-       </a>
+          
+           <button type="button" class="btn pull-right btn-success" type="submit" name="action">Save Changes</button>
+          
+           
         </button>
       </h5>
     </div>
@@ -46,7 +44,7 @@ a{
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
   </script>
-
-  {% endfor %}
+</form>
+ 
   
   {% endblock %}
