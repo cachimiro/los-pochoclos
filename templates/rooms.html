@@ -22,10 +22,19 @@ img {
   display: none;
   width: 99.3%;
 }
-.big-camping-image {
+.big-room-image-2 {
   display: none;
   width: 99.3%;
 }
+.big-room-image-3 {
+  display: none;
+  width: 99.3%;
+}
+.big-room-image-4 {
+  display: none;
+  width: 99.3%;
+}
+
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
@@ -51,6 +60,45 @@ img {
   font-size: 20px;
   -webkit-user-select: none;
 }
+.prev-2,
+.next-2 {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  color: white !important;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-user-select: none;
+}
+.prev-3,
+.next-3 {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  color: white !important;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-user-select: none;
+}
+.prev-4,
+.next-4 {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  color: white !important;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-user-select: none;
+}
 
 
 
@@ -59,10 +107,33 @@ img {
   right: 21.5;
   border-radius: 3px 0 0 3px;
 }
-
+.next-2{
+  right: 21.5;
+  border-radius: 3px 0 0 3px;
+}
+.next-3{
+  right: 21.5;
+  border-radius: 3px 0 0 3px;
+}
+.next-4{
+  right: 21.5;
+  border-radius: 3px 0 0 3px;
+}
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
+  background-color: #e4d9d9;
+}
+.prev-2:hover,
+.next-2:hover {
+  background-color: #e4d9d9;
+}
+.prev-3:hover,
+.next-3:hover {
+  background-color: #e4d9d9;
+}
+.prev-4:hover,
+.next-4:hover {
   background-color: #e4d9d9;
 }
 
@@ -78,21 +149,48 @@ img {
   float: left;
   width: 16.32%;
 }
+.column-2 {
+  float: left;
+  width: 16.32%;
+}
+.column-3 {
+  float: left;
+  width: 16.32%;
+}
+.column-4 {
+  float: left;
+  width: 16.32%;
+}
 
 /* Add a transparency effect for thumnbail images */
 .room-image {
   opacity: 0.6;
 }
-.camping-image {
+.room-image-2 {
   opacity: 0.6;
 }
+.room-image-3 {
+  opacity: 0.6;
+}
+.room-image-4 {
+  opacity: 0.6;
+}
+
 
 .active,
 .room-image:hover {
   opacity: 1;
 }
 .active,
-.camping-image:hover {
+.room-image-2:hover {
+  opacity: 1;
+}
+.active,
+.room-image-3:hover {
+  opacity: 1;
+}
+.active,
+.room-image-4:hover {
   opacity: 1;
 }
 .move-images{
@@ -109,6 +207,7 @@ h3{
 <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
+        <h3>Main house</h3>
        
           <p>We offer a range og rooms to suit your needs. all of our rooms have storage and satelite Tv. Some rooms have a privet bathroom
           all you can shere with aonter room so if you are in a big group you can share the same bathroom. we also offer rooms with (A.C) they all 
@@ -182,11 +281,198 @@ h3{
 <div class="container">
     <div class="row">
       <div class="col-12">
-        <h3>cabin</h3>
+        <h3>A.C Rooms</h3>
         <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
         to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
         the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
       </div>
+       <div class="col-lg-11 col-md-11 col-sm-12">
+  <div class="big-room-image-2">
+    <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-2">
+    <img src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-2">
+    <img src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-2">
+    <img src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-2">
+    <img src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-2">
+    <img src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev-2" onclick="plusSlidesTwo(-1)">❮</a>
+  <a class="next-2" onclick="plusSlidesTwo(1)">❯</a>
+  </div>
+    
+  
+
+  <div class="row move-images">
+     <div class="col-lg-11 col-md-11 col-sm-12">
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column-2">
+      <img class="room-image-2 cursor" src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+    </div>
+      <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
+    </div>
+   
+</div>
+<hr class="featurette-divider">
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>Cabin</h3>
+        <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
+        to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
+        the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12">
+  <div class="big-room-image-3">
+    <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-3">
+    <img src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-3">
+    <img src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-3">
+    <img src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-3">
+    <img src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-3">
+    <img src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev-2" onclick="plusSlidesThree(-1)">❮</a>
+  <a class="next-2" onclick="plusSlidesThree(1)">❯</a>
+  </div>
+    
+  
+
+  <div class="row move-images">
+     <div class="col-lg-11 col-md-11 col-sm-12">
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column-3">
+      <img class="room-image-3 cursor" src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+    </div>
+      <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
+    </div>
+    </div>
+   
+</div>
+<hr class="featurette-divider">
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>camping</h3>
+        <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
+        to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
+        the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12">
+  <div class="big-room-image-4">
+    <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-4">
+    <img src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-4">
+    <img src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-4">
+    <img src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%">
+  </div>
+
+  <div class="big-room-image-4">
+    <img src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%">
+  </div>
+    
+  <div class="big-room-image-4">
+    <img src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev-2" onclick="plusSlidesFour(-1)">❮</a>
+  <a class="next-2" onclick="plusSlidesFour(1)">❯</a>
+  </div>
+    
+  
+
+  <div class="row move-images">
+     <div class="col-lg-11 col-md-11 col-sm-12">
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="https://www.w3schools.com/w3css/img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column-4">
+      <img class="room-image-4 cursor" src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+    </div>
       <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
     </div>
    
@@ -220,9 +506,89 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+// slide show for rooms with aircon
 
+var slideIndexTwo = 1;
+showSlidesTwo(slideIndexTwo);
 
+function plusSlidesTwo(s) {
+  showSlidesTwo(slideIndexTwo += s);
+}
 
+function currentSlideTwo(s) {
+  showSlidesTwo(slideIndexTwo = s);
+}
+
+function showSlidesTwo(s) {
+  var i;
+  var slidesTwo = document.getElementsByClassName("big-room-image-2");
+  var dotsTwo = document.getElementsByClassName("room-image-2");
+  if (s > slidesTwo.length) {slideIndexTwo = 1};
+  if (s < 1) {slideIndexTwo = slidesTwo.length}
+  for (i = 0; i < slidesTwo.length; i++) {
+      slidesTwo[i].style.display = "none";
+  }
+  for (i = 0; i < dotsTwo.length; i++) {
+      dotsTwo[i].className = dotsTwo[i].className.replace(" active", "");
+  }
+  slidesTwo[slideIndexTwo-1].style.display = "block";
+  dotsTwo[slideIndexTwo-1].className += " active";
+}
+// slide show for cabin
+
+var slideIndexThree = 1;
+showSlidesThree(slideIndexThree);
+
+function plusSlidesThree(f) {
+  showSlidesThree(slideIndexThree += f);
+}
+
+function currentSlideThree(f) {
+  showSlidesThree(slideIndexThree = f);
+}
+
+function showSlidesThree(f) {
+  var i;
+  var slidesThree = document.getElementsByClassName("big-room-image-3");
+  var dotsThree = document.getElementsByClassName("room-image-3");
+  if (f > slidesThree.length) {slideIndexThree = 1};
+  if (f < 1) {slideIndexThree = slidesThree.length};
+  for (i = 0; i < slidesThree.length; i++) {
+      slidesThree[i].style.display = "none";
+  }
+  for (i = 0; i < dotsThree.length; i++) {
+      dotsThree[i].className = dotsThree[i].className.replace(" active", "");
+  }
+  slidesThree[slideIndexThree-1].style.display = "block";
+  dotsThree[slideIndexThree-1].className += " active";
+}
+// slide show camping
+var slideIndexFour = 1;
+showSlidesFour(slideIndexFour);
+
+function plusSlidesFour(o) {
+  showSlidesFour(slideIndexFour += o);
+}
+
+function currentSlideFour(o) {
+ showSlidesFour(slideIndexFour = o);
+}
+
+function showSlidesFour(o) {
+  var i;
+  var slidesFour = document.getElementsByClassName("big-room-image-4");
+  var dotsFour = document.getElementsByClassName("room-image-4");
+  if (o > slidesFour.length) {slideIndexFour = 1};
+  if (o < 1) {slideIndexFour = slidesFour.length};
+  for (i = 0; i < slidesFour.length; i++) {
+      slidesFour[i].style.display = "none";
+  }
+  for (i = 0; i < dotsFour.length; i++) {
+      dotsFour[i].className = dotsFour[i].className.replace(" active", "");
+  }
+  slidesFour[slideIndexFour-1].style.display = "block";
+  dotsFour[slideIndexFour-1].className += " active";
+}
 </script>
 
 {% endblock %}

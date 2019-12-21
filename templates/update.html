@@ -15,29 +15,34 @@ a{
 <h3> Administration </h3>
 
 
-<form action="{{ url_for('Admin_update_reviews_and_more', opinion_id=opinion._id) }}" method="POST">
-<div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingThree" , "{{ opinion._id }}">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <h3> {{ opinion.name }} {{ opinion.surname }} </h3>
-          <h4>{{ opinion.Title}} </h4>
-          
-           <button type="button" class="btn pull-right btn-success" type="submit" name="action">Save Changes</button>
-          
-           
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseThree" , "{{ opinion._id }}" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        <p>{{ opinion.Opinion|truncate(200, True)}}</p>
-        <p>{{ opinion.how_would_you_improve_it}}</p>
-      </div>
-    </div>
+<form action="{{ url_for('update_opinion', opinion_id=opinion._id) }}" method="POST">
+<div class="form-group">
+    <label for="name">Email address</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{ opinion.name }}">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
+  <div class="form-group">
+    <label for="surname">Password</label>
+    <input <input type="text" class="form-control" id="surname" name="surname" value="{{ opinion.surname }}">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+     <input <input type="text" class="form-control" id="Title" name="Title" value="{{ opinion.Title }}"
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="Opinion" name="Opinion" rows="3">{{ opinion.Opinion}}</textarea>
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="how_would_you_improve_it" name="how_would_you_improve_it" rows="3">{{ opinion.how_would_you_improve_it}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 
 

@@ -17,7 +17,7 @@
 
 <h1>Reviews</h1>
 
-{% for opinion in opinion %}
+{% for opinion in opinion | reverse %}
 <h2> {{ opinion.name }} {{ opinion.surname }} </h2>
 <h3>{{ opinion.Title}} </h3>
 <p class="{{ opinion._id }} ">{{ opinion.Opinion|truncate(200, True)}}</p>
