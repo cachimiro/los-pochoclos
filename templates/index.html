@@ -1,6 +1,49 @@
 
-
 {% extends 'base.html' %} {% block content %}
+<style>
+
+.column img {
+  opacity: 0.8; 
+  cursor: pointer;  
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 25%;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.expand-image{
+  position: relative;
+ display:none;
+}
+
+
+/* Closable button inside the expanded image */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
 <div class="container">
 <div class="row">
     <div class="col-sm-12 col-lg-12 col-md-12 ">
@@ -15,7 +58,97 @@
      </p>
            </div>         
         </div>
+        <!--phtos for main house-->
         <hr>
+        <div class="container">
+                   <div class="row ">
+  <div class="column">
+    <img src="https://images.wsj.net/im-95036?width=620&size=1.5" alt="rooms" style="width:100%" onclick="expandImage(this);" id="togle">
+  </div>
+  <div class="column">
+    <img src="https://images.ctfassets.net/sahy2rpqbnsp/72buNpf6rmGWSMeWokguqM/1f4085ffa6bf582e7c6f9425c1b16cc2/City-2Queen-beds-window-NEW-wide.jpg?w=1920&h=1080&fm=jpg&q=50&fit=fill" alt="rooms" style="width:100%" onclick="expandImage(this);" id="togle-1">
+  </div>
+  <div class="column">
+    <img src="https://qtxasset.com/styles/breakpoint_sm_default_480px_w/s3/travelagentcentral/1545013501/Terrace%20SuiteFV%205933-3.jpg?JV0NnttXHKpA3WpBUHXPG96sfgNfQxKY&itok=uBU5lOOJ" alt="rooms" style="width:100%" onclick="expandImage(this);" id="togle-2">
+  </div>
+  <div class="column">
+    <img src="https://www.thesun.co.uk/wp-content/uploads/2019/05/NINTCHDBPICT000490292497.jpg" alt="rooms" style="width:100%" onclick="expandImage(this);"id="togle-3">
+  </div>
+</div>
+</div>
+<div class="container expand-image">
+  <span onclick="this.parentElement.style.display='none'" class="close">&times;</span>
+  <img id="expandedImg" style="width:100%">
+</div>
+ <hr>
+ <!-- photos for ac rooms-->
+  <div class="container">
+                   <div class="row ">
+  <div class="column">
+    <img src="https://www.welcome-hotels.com/site/assets/files/30116/welcome_hotel_marburg_superior_1k.2560x1600.jpg" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);" id="togle-4">
+  </div>
+  <div class="column">
+    <img src="https://www.welcome-hotels.com/site/assets/files/30621/welcome_hotel_marburg_superior_5k.2560x1600.jpg" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);" id="togle-5">
+  </div>
+  <div class="column">
+    <img src="https://s7d2.scene7.com/is/image/ritzcarlton/RCBARCE_00387-1" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);" id="togle-6">
+  </div>
+  <div class="column">
+    <img src="https://s7d2.scene7.com/is/image/ritzcarlton/50514363-Arts%20hotel%20-%20april%202018%2020" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);"id="togle-7">
+  </div>
+</div>
+</div>
+<div class="container expand-image">
+  <span onclick="this.parentElement.style.display='none'" class="close">&times;</span>
+  <img id="expandedImg-2" style="width:100%">
+</div>
+ <hr>
+ <!--photos for cabin-->
+  <div class="container">
+                   <div class="row ">
+  <div class="column">
+    <img src="https://i.ytimg.com/vi/WmYCUljsrDg/maxresdefault.jpg" alt="Cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-8">
+  </div>
+  <div class="column">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPNCT7KWZ60IXLkWump0Nowni9qCIdzk9nPIn89rTKNZbCk_x&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-9">
+  </div>
+  <div class="column">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_WHUav-OsZirK8rH-toj9PUoSI5TK_6OjANGx5PGjhju3TTX&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-10">
+  </div>
+  <div class="column">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXA1s1m7lxx1nX-Viob1kxPCUv59X9mabN4jiYKSwToJfL3oFi&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);"id="togle-11">
+  </div>
+</div>
+</div>
+<div class="container expand-image">
+  <span onclick="this.parentElement.style.display='none'" class="close">&times;</span>
+  <img id="expandedImg-3" style="width:100%">
+</div>
+ <hr>
+ <!--photos for camping-->
+ <div class="container">
+                   <div class="row ">
+  <div class="column">
+    <img src="https://www.gonescamping.com/wp-content/uploads/2018/05/cropped-camping-hero_0_0.jpg" alt="Cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-12">
+  </div>
+  <div class="column">
+    <img src="https://lqp-p-imgs.s3-ap-south-1.amazonaws.com/faceview/c1d/e9j/a9d/a1f/affimgs/az-large-5034923.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-13">
+  </div>
+  <div class="column">
+    <img src="https://www.switchbacktravel.com/sites/default/files/articles%20/Camping%20Chairs%20Round-up%20%28m%29.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-14">
+  </div>
+  <div class="column">
+    <img src="https://asomammoth.com/wp-content/uploads/2019/07/camp-in-mammoth-lakes.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);"id="togle-15">
+  </div>
+</div>
+</div>
+<div class="container expand-image">
+  <span onclick="this.parentElement.style.display='none'" class="close">&times;</span>
+  <img id="expandedImg-4" style="width:100%">
+</div>
+ <hr>
+ 
+ <!--charity -->
         <div class="post-preview">
             <a href="{{ url_for('charity') }}">
                 <h2 class="post-title">
@@ -23,32 +156,9 @@
                     (mother) of Tanya</p>
                
             
-        </div>
         <hr>
-        <div class="post-preview">
-            <a href="#">
-                <h2 class="#">
-                    Science has not yet mastered prophecy
-                </h2>
-                <p class="#">
-                    We predict too much for the next year and yet far too little for the next ten.
-                </p>
-            </a>
-           
-        </div>
-        <hr>
-        <div class="post-preview">
-            <a href="post.html">
-                <h2 class="#">
-                    Failure is not an option
-                </h2>
-                <p class="#">
-                    Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                </p>
-            </a>
-          
-        </div>
-        <hr>
+            
+       
         <!-- Pager -->
         <div class="clearfix">
             <a class="btn btn-primary float-right col-sm-6 col-md-4 col-lg-4" href="{{url_for('get_reviews')}} ">view reviews &rarr;</a>
@@ -56,11 +166,80 @@
         </div>
     </div>
 </div>
-<!----just commeting out this section for the chat
-<form method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <button>Go to chat!</button>
-        </form>
-        ------->
+<script>
+// for the image galery
+// for main rooms
+function expandImage(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.src = imgs.src;
+  expandImg.parentElement.style.display = "block";
+      
+}
+$("#togle").click(function (){
+  $("#expandedImg").toggle()  
+});
+$("#togle-1").click(function (){
+  $("#expandedImg").toggle()  
+});
+$("#togle-2").click(function (){
+  $("#expandedImg").toggle()  
+});
+$("#togle-3").click(function (){
+  $("#expandedImg").toggle()  
+});
+// photos for ac rooms
+function expandImageTwo(imgs) {
+  var expandImgTwo = document.getElementById("expandedImg-2");
+  expandImgTwo.src = imgs.src;
+  expandImgTwo.parentElement.style.display = "block";
+}
+$("#togle-4").click(function (){
+  $("#expandedImg-2").toggle()  
+});
+$("#togle-5").click(function (){
+  $("#expandedImg-2").toggle()  
+});
+$("#togle-6").click(function (){
+  $("#expandedImg-2").toggle()  
+});
+$("#togle-7").click(function (){
+  $("#expandedImg-2").toggle()  
+});
+// photos for cabin
+function expandImageThree(imgs) {
+  var expandImgThree = document.getElementById("expandedImg-3");
+  expandImgThree.src = imgs.src;
+  expandImgThree.parentElement.style.display = "block";
+}
+$("#togle-8").click(function (){
+  $("#expandedImg-3").toggle()  
+});
+$("#togle-9").click(function (){
+  $("#expandedImg-3").toggle()  
+});
+$("#togle-10").click(function (){
+  $("#expandedImg-3").toggle()  
+});
+$("#togle-11").click(function (){
+  $("#expandedImg-3").toggle()  
+});
+function expandImageFour(imgs) {
+  var expandImgFour = document.getElementById("expandedImg-4");
+  expandImgFour.src = imgs.src;
+  expandImgFour.parentElement.style.display = "block";
+}
+$("#togle-12").click(function (){
+  $("#expandedImg-4").toggle()  
+});
+$("#togle-13").click(function (){
+  $("#expandedImg-4").toggle()  
+});
+$("#togle-14").click(function (){
+  $("#expandedImg-4").toggle()  
+});
+$("#togle-15").click(function (){
+  $("#expandedImg-4").toggle()  
+});
+// photos for camping
+</script>
 {% endblock %}
