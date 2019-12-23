@@ -1,7 +1,6 @@
 import os
 import json
 import click
-from flask_mail import Message
 from flask import Flask, render_template, request,redirect, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -14,6 +13,10 @@ app.config["MONGO_URI"] = "mongodb+srv://root:Johann@myfirstcluster-ugp0n.mongod
 
 mongo = PyMongo(app)
 app.secret_key = "cachimiro"
+@app.route('/')
+def index():
+    return render_template("index.html")
+
 
 # code to be ble to see reviews
 @app.route('/view_reviews')
@@ -38,9 +41,6 @@ def insert_task():
     return redirect(url_for('get_reviews'))
 
 # code for conecting templates
-@app.route('/')
-def index():
-    return render_template("index.html")
 
 
 @app.route('/about')
