@@ -20,10 +20,10 @@
 {% for opinion in opinion | reverse %}
 <h2> {{ opinion.name }} {{ opinion.surname }} </h2>
 <h3>{{ opinion.Title}} </h3>
-<p class="{{ opinion._id }} ">{{ opinion.Opinion|truncate(200, True)}}</p>
+<p class="{{ opinion.Opinion|truncate(200, True)}} ">{{ opinion.Opinion|truncate(200, True)}}</p>
 <p id="{{ opinion._id }}" class="hide-all-text">{{ opinion.Opinion }}</p>
 
-<button onclick="showMore('{{ opinion._id}}')">Show more</button>
+<button onclick="showMore('{{ opinion._id}}')" class="{{ opinion._id }}">Show more</button>
 <button type="button" id="hide">Read less</button>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
@@ -41,8 +41,13 @@ if (x.style.display === "block") {
 }
 
 }
-
-
+$(".{{ opinion._id }}").click(function(){
+ $("#{{ opinion._id }}").toggle()
+ 
+});
+$(".{{ opinion._id }}").click(function(){
+ $(".{{ opinion.Opinion|truncate(200, True)}}").hide()
+});
 
 </script>
 <hr> {% endfor %}

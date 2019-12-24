@@ -1,0 +1,34 @@
+<style>
+    .bar {
+        width: 100%;
+        margin: 10px;
+    }
+    .height{
+        height: 100%;
+        margin-left: 30px;
+    }
+</style>
+{% extends 'base.html' %} {% block content %}
+<h1>Only Staff</h1>
+<p>if you don't work for the comapny please leave this page</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+
+
+            <form {{ "url_for('log_admin_page')"}} methods="[POST}">
+
+                <input type="text" name="username" placeholder="username" required class="bar" />
+                <input type="text" name="password" placeholder="password" required class="bar" />
+                <button type="submit" class="btn btn-primary">Login</button>
+
+            </form>
+        </div>
+        <div class="col-6">
+            <img class="height" src="../static/img/portada-mama.jpg"></img>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

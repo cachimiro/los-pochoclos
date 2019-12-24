@@ -41,8 +41,20 @@ def insert_task():
     return redirect(url_for('get_reviews'))
 
 # code for conecting templates
-
-
+@app.route('/log_in')
+def Login_page():
+    return render_template("log.html")
+    
+"""  
+@app.route("/log_in", methods=['GET', 'POST'])
+def log_admin_page():
+    username = request.form.get('username')
+    password = request.form.get('password')
+  if username  = 'Antigone-curry' and  password  = 'Antigone1':
+    return render_template('admin.html')
+else: 
+ return render_template('log.html')
+"""
 @app.route('/about')
 def about():
     data = []
@@ -78,7 +90,7 @@ def rooms():
 def charity():
    return render_template("charity.html", page_title="charity")
    
-@app.route('/administration')
+@app.route('/admin')
 def Admin_update_reviews_and_more():
    return render_template("admin.html", opinion=mongo.db.opinion.find())
    
