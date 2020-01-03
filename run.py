@@ -153,16 +153,38 @@ def update_charity_info():
     return render_template("admin-charity.html", char=mongo.db.char.find(), data=mongo.db.data.find(), cha=mongo.db.data_cha.find())
 
 
-@app.route('/update_charity_info/<charity_id>', methods=["POST"])
-def update_charity(charity_id):
-    charity = mongo.db.char
-    charity.update( {'_id': ObjectId(charity_id)},
+@app.route('/update_charity_info/<char_id>', methods=["POST"])
+def update_charity(char_id):
+    char = mongo.db.char
+    char.update( {'_id': ObjectId(char_id)},
     {
         'title':request.form.get('title'),
         'title2':request.form.get('title2'),
         
     })
-    return redirect(url_for('Admin_update_reviews_and_more'))
+    return redirect(url_for('update_charity_info'))
+    
+@app.route('/update_charity_info/<data_id>', methods=["POST"])
+def update_charity_data(data_id):
+    data = mongo.db.data
+    data.update( {'_id': ObjectId(data_id)},
+    {
+        'title':request.form.get('title'),
+        'subject':request.form.get('subject'),
+        
+    })
+    return redirect(url_for('update_charity_info'))
+    
+@app.route('/update_charity_info/<cha_id>', methods=["POST"])
+def update_charity_data_1(cha_id):
+    data_cha = mongo.db.data_cha
+    data_cha.update( {'_id': ObjectId(cha_id)},
+    {
+        'title':request.form.get('title'),
+        'subject':request.form.get('subject'),
+        
+    })
+    return redirect(url_for('update_charity_info'))
    
 # to be able to update the charity information   
 
