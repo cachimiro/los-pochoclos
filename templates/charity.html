@@ -83,18 +83,31 @@ button{
   
    {{ page_title }}
 
-</h2><header class="masthead" style="background-image: url('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/198979_183783401664354_8256655_n.jpg?_nc_cat=107&_nc_ohc=fo7OV44w-2MAQn056HLddJiNwwdMlJGb7H2xHXyMq6WGMhgtGDJShV99A&_nc_ht=scontent-lht6-1.xx&oh=b607f42559864e66febb7cb282797aff&oe=5E6CB1C7')"><div class="overlay"></div><div class="container"><div class="row"><div class="col-lg-8 col-md-10 mx-auto"><div class="post-heading"><h1 style=" text-align:  center; margin:10px">Her Name IS Tanya</h1><h2 class="subheading" style=" text-align:  center">She is the reason this charity is taking place</h2></div></div></div></div></header><section><div class="container"><div class="row"><div class="col-lg-7 col-md-7 "><h3>why we do it</h3><p>Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam;
-est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
-qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica,
-quam nunc putamus parum claram,
-anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi,
-qui nunc nobis videntur parum clari,
-fiant sollemnes in futurum.</p>
+</h2><header class="masthead" style="background-image: url('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/198979_183783401664354_8256655_n.jpg?_nc_cat=107&_nc_ohc=fo7OV44w-2MAQn056HLddJiNwwdMlJGb7H2xHXyMq6WGMhgtGDJShV99A&_nc_ht=scontent-lht6-1.xx&oh=b607f42559864e66febb7cb282797aff&oe=5E6CB1C7')"><div class="overlay">
+  
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="post-heading">
+        {% for char in char %}
+        <h1 style=" text-align:  center; margin:10px">{{ char.title }}</h1>
+        <h2 class="subheading" style=" text-align:  center">{{ char.title2 }}</h2>
+        {% endfor %}
+        </div>
+        </div>
+        </div>
+        </div>
+        </header>
+        <section>
+          {% for data in data %}
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 col-md-7 ">
+                <h3>{{ data.title }}</h3>
+<p>{{ data.subject }}</p>
+</div>
+{% endfor %}
 <div class="col-lg-5 col-md-5 " id="slide-show-photos">
   <div class="slideshow-container">
     <div class="mySlides fade">
@@ -132,6 +145,7 @@ fiant sollemnes in futurum.</p>
                         
                           </div>
                           </div>
+                            
                           <div class="container">
                             <div class="row">
                               <div class="col-lg-5 col-md-5 ">
@@ -139,21 +153,13 @@ fiant sollemnes in futurum.</p>
                   <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  style="width:100%"/>
                                 
        </div>
+       {% for data_cha in cha %}
      <div class="col-lg-7 col-md-7 ">
-   <h3 class="header-what-we-do">what we do</h3>
-   <p>Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam;
-est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
-qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica,
-quam nunc putamus parum claram,
-anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi,
-qui nunc nobis videntur parum clari,
-fiant sollemnes in futurum.</p>
+   <h3 class="header-what-we-do"> {{ data_cha.title }}</h3>
+   <p>{{ data_cha.subject }}</p>
+   
+{% endfor %}
 
-</p>
 </div>
 </div>
 </div>
@@ -169,6 +175,7 @@ fiant sollemnes in futurum.</p>
 </div>
 </section>
 <hr>
+
 <script>
 var slideIndex=0;
 showSlides();

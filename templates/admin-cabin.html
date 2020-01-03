@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+{% for cabin in cabin %}
+  <form action="{{ url_for('update_rooms_cabin', cabin_id=cabin._id) }}" method="POST">
+<div class="form-group">
+    <label for="name">Cabin Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ cabin.title }}">
+   
+  </div>
+  <div class="form-group">
+    <label for="surname">Price</label>
+    <input <input type="text" class="form-control" id="price" name="price" value="{{ cabin.price }}">
+  </div>
+ 
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Text</label>
+    <textarea class="form-control" id="subject" name="subject" rows="3">{{ cabin.subject }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+{% endfor %}
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  </script>
+</form>
+ 
+
+{% endblock %}

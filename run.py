@@ -13,6 +13,9 @@ app.config["MONGO_URI"] = "mongodb+srv://root:Johann@myfirstcluster-ugp0n.mongod
 
 mongo = PyMongo(app)
 app.secret_key = "cachimiro"
+
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -24,8 +27,6 @@ def get_reviews():
     return render_template("reviews.html", opinion=mongo.db.opinion.find())
     
 
-    
- # code to shorten reviews so they are not to overwelming 
 
         # TODO: write code...
 # this line of code will allow costumesr to add reviews
@@ -35,32 +36,20 @@ def add_review():
 
      
 @app.route('/add_review', methods=['POST'])
-def insert_task():
-    tasks = mongo.db.opinion
-    tasks.insert_one(request.form.to_dict())
+def insert_reviews():
+    reviews = mongo.db.opinion
+    reviews.insert_one(request.form.to_dict())
     return redirect(url_for('get_reviews'))
 
 # code for conecting templates
-@app.route('/log_in')
-def Login_page():
-    return render_template("log.html")
-    
-"""  
-@app.route("/log_in", methods=['GET', 'POST'])
-def log_admin_page():
-    username = request.form.get('username')
-    password = request.form.get('password')
-  if username  = 'Antigone-curry' and  password  = 'Antigone1':
-    return render_template('admin.html')
-else: 
- return render_template('log.html')
-"""
+
+
 @app.route('/about')
 def about():
     data = []
     with open("data/company.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("about.html", page_title="About", company=data)
+    return render_template("about.html",company=data, about=mongo.db.about.find())
     
 @app.route('/about/<member_name>')
 def about_member(member_name):
@@ -84,17 +73,109 @@ def contact():
 
 @app.route('/rooms')
 def rooms():
-   return render_template("rooms.html", page_title="Rooms")
+   return render_template("rooms.html", page_title="Rooms",fan=mongo.db.fan.find(),ac=mongo.db.ac.find(),cabin=mongo.db.cabin.find(),camp=mongo.db.camp.find())
+   
+   
+# to be able to update the rooms information
+@app.route('/update_room')
+def update_room_data():
+    return render_template("admin-room.html", fan=mongo.db.fan.find())
+
+@app.route('/update_rooms/<fan_id>', methods=["POST"])
+def update_rooms(fan_id):
+    fan = mongo.db.fan
+    fan.update( {'_id': ObjectId(fan_id)},
+    {
+        'title':request.form.get('title'),
+        'price':request.form.get('price'),
+        'subject': request.form.get('subject'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+    
+@app.route('/update_room_ac')
+def update_room_ac():
+    return render_template("admin-ac.html", ac=mongo.db.ac.find())
+
+@app.route('/update_rooms_ac/<ac_id>', methods=["POST"])
+def update_rooms_ac(ac_id):
+    ac = mongo.db.ac
+    ac.update( {'_id': ObjectId(ac_id)},
+    {
+        'title':request.form.get('title'),
+        'price':request.form.get('price'),
+        'subject':request.form.get('subject'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+    
+@app.route('/update_room_cabin')
+def update_room_cabin():
+    return render_template("admin-cabin.html", cabin=mongo.db.cabin.find())
+
+@app.route('/update_rooms_cabin/<cabin_id>', methods=["POST"])
+def update_rooms_cabin(cabin_id):
+    cabin = mongo.db.cabin
+    cabin.update( {'_id': ObjectId(cabin_id)},
+    {
+        'title':request.form.get('title'),
+        'price':request.form.get('price'),
+        'subject':request.form.get('subject'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+    
+@app.route('/update_room_camp')
+def update_room_camp():
+    return render_template("admin-camp.html", camp=mongo.db.camp.find())
+
+@app.route('/update_rooms_camp/<camp_id>', methods=["POST"])
+def update_rooms_camp(camp_id):
+    camp = mongo.db.camp
+    camp.update( {'_id': ObjectId(camp_id)},
+    {
+        'title':request.form.get('title'),
+        'price':request.form.get('price'),
+        'subject':request.form.get('subject'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+#  code so that the charity information can be diplayed and the the manager can update the information
 
 @app.route('/charity')
 def charity():
-   return render_template("charity.html", page_title="charity")
+   return render_template("charity.html", page_title="charity",data=mongo.db.data.find(), cha=mongo.db.data_cha.find(), char=mongo.db.char.find())
    
+   
+   
+@app.route('/update_charity')
+def update_charity_info():
+    return render_template("admin-charity.html", char=mongo.db.char.find(), data=mongo.db.data.find(), cha=mongo.db.data_cha.find())
+
+
+@app.route('/update_charity_info/<charity_id>', methods=["POST"])
+def update_charity(charity_id):
+    charity = mongo.db.char
+    charity.update( {'_id': ObjectId(charity_id)},
+    {
+        'title':request.form.get('title'),
+        'title2':request.form.get('title2'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
+   
+# to be able to update the charity information   
+
 @app.route('/admin')
 def Admin_update_reviews_and_more():
-   return render_template("admin.html", opinion=mongo.db.opinion.find())
+   return render_template("admin.html")
    
 # this line of code is for the managers to update their reviews and delete them
+@app.route('/admin_reviews')
+def Admin_update_reviews():
+   return render_template("admin-reviews.html", opinion=mongo.db.opinion.find())
+   
+   
 @app.route('/edit_review/<opinion_id>')
 def edit_review(opinion_id):
     the_opinion =  mongo.db.opinion.find_one({"_id": ObjectId(opinion_id)})
@@ -119,6 +200,11 @@ def update_opinion(opinion_id):
 def delete_opinion(opinion_id):
     mongo.db.opinion.remove({'_id': ObjectId(opinion_id)})
     return redirect(url_for('Admin_update_reviews_and_more'))
+    
+
+
+
+
 
 
 if __name__ == '__main__':

@@ -1,13 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
+{% for about in about %}
 
-
-<h2>{{ page_title }}</h2>
+<h2>{{ about.title }}</h2>
 <p>
-    Los Pocholos, located at 7 minute drive from Mingeuo, near Palomino. 2 hrs by bus from Santa Marta or 1.5 hrs from Riohacha. The finca is a comfortable house with large bedrooms set in a garden; both fan and air conditioned options are available,. The
-    ocean (a kilometer of totally unspoilt Caribbean beach fringed with palm trees) is 100 metres away, a place where you can sit back and enjoy roaring waves at night, the river running on one side of the finca with fisherman passing twice a day thet
-    deliver local fresh fish. There is a cook who serves delicious and inexpensive fresh meals, including fresh fish, plaintains, and fruit juices from the garden.
-</p>
+    {{ about.subject }}
+ </p>
+{% endfor %}
 <h2>Meet The Team</h2>
 {% for member in company %}
 

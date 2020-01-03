@@ -1,0 +1,54 @@
+
+<style>
+.btn-link{
+  color: black !important;
+  text-decoration: none !important;
+  text-align: center!important;
+}
+.btn-link:hover{
+  color: grey !important;
+}
+a{
+  text-align: left!important;
+}
+
+</style>
+{% extends 'base.html' %} {% block content %}
+
+
+
+{% for opinion in opinion | reverse %}
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingThree" , "{{ opinion._id }}">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <h3> {{ opinion.name }} {{ opinion.surname }} </h3>
+          <h4>{{ opinion.Title}} </h4>
+          <a href="{{url_for('edit_review', opinion_id=opinion._id)}}">
+           <button type="button" class="btn pull-right btn-primary">Edit</button>
+           </a>
+           <a href="{{url_for('delete_opinion', opinion_id=opinion._id)}}">
+           <button type="button" class="btn pull-right btn-danger">Delete</button>
+       </a>
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseThree" , "{{ opinion._id }}" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p>{{ opinion.Opinion|truncate(200, True)}}</p>
+        <p>{{ opinion.how_would_you_improve_it}}</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  
+  </script>
+
+  {% endfor %}
+  
+  {% endblock %}

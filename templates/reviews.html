@@ -20,40 +20,41 @@
 {% for opinion in opinion | reverse %}
 <h2> {{ opinion.name }} {{ opinion.surname }} </h2>
 <h3>{{ opinion.Title}} </h3>
-<p class="{{ opinion.Opinion|truncate(200, True)}} ">{{ opinion.Opinion|truncate(200, True)}}</p>
-<p id="{{ opinion._id }}" class="hide-all-text">{{ opinion.Opinion }}</p>
+<p id="{{ opinion._id }}_truncated">{{ opinion.Opinion|truncate(200, True)}}</p>
+<p id="{{ opinion._id }}_full" class="hide-all-text" style="display: none;">{{ opinion.Opinion }}</p>
 
-<button onclick="showMore('{{ opinion._id}}')" class="{{ opinion._id }}">Show more</button>
-<button type="button" id="hide">Read less</button>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
+<button onclick="showMore('{{ opinion._id }}')" id="{{ opinion._id }}_show">Show more</button>
+<button type="button" id="{{ opinion._id }}_hide">Read less</button>
+{% endfor %}
 
- function showMore(id) {
-  var y = document.getElementsByClassName("{{ opinion._id }}");
-  var x = document.getElementById("{{ opinion._id }}");
-document.getElementById(id).click();
-if (x.style.display === "block") {
-    y.style.display === "none";
-    x.style.display === "block";
-} else {
- x.style.display === "none";
- 
-}
-
-}
-$(".{{ opinion._id }}").click(function(){
- $("#{{ opinion._id }}").toggle()
- 
-});
-$(".{{ opinion._id }}").click(function(){
- $(".{{ opinion.Opinion|truncate(200, True)}}").hide()
-});
-
-</script>
-<hr> {% endfor %}
+<hr> 
 
 <a class="btn btn-primary float-left col-sm-6" href="{{url_for('add_review')}}">Add a review</a>
 
 
 
 {% endblock %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+ function showMore(id) {
+   var truncateReviews = document.getElementsById("{{ opinion._id }}_truncated");
+  var fullReviews = document.getElementById("{{ opinion._id }}_full");
+document.getElementById("{{ opinion._id}}_show").click();
+ if (truncateReviews.style.display == "block") {
+   fullReviews.style.display == "none";
+    
+ } else if ( fullReviews.style.display == "block"){
+   truncateReviews.style.display =="none";  
+ 
+ } else {
+  truncateReviews.style.display == "block";
+ 
+}
+
+ }
+ 
+
+
+
+</script>

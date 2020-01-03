@@ -10,43 +10,51 @@
 a{
   text-align: left!important;
 }
+
+
+.btn{
+  width: 100% !important;
+  margin:20px !important;
+  text-align: center;
+}
+#dropdownMenuButton{
+ width: 100%;
+  margin:20px;
+  text-align: center;
+}
 </style>
 {% extends 'base.html' %} {% block content %}
 <h3> Administration </h3>
-
-{% for opinion in opinion | reverse %}
-
-<div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingThree" , "{{ opinion._id }}">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <h3> {{ opinion.name }} {{ opinion.surname }} </h3>
-          <h4>{{ opinion.Title}} </h4>
-          <a href="{{url_for('edit_review', opinion_id=opinion._id)}}">
-           <button type="button" class="btn pull-right btn-primary">Edit</button>
-           </a>
-           <a href="{{url_for('delete_opinion', opinion_id=opinion._id)}}">
-           <button type="button" class="btn pull-right btn-danger">Delete</button>
-       </a>
-        </button>
-      </h5>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="dropdown">
+  <button class="btn btn-success dropdown-toggle text-wrap" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Rooms
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{ url_for('update_room_data') }}">Fan Rooms</a>
+    <a class="dropdown-item" href="{{ url_for('update_room_ac') }}">A.C Rooms</a>
+    <a class="dropdown-item" href="{{ url_for('update_room_cabin') }}">Cabin</a>
+    <a class="dropdown-item" href="{{ url_for('update_room_camp') }}">Camping</a>
+  </div>
+</div>
     </div>
-
-    <div id="collapseThree" , "{{ opinion._id }}" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        <p>{{ opinion.Opinion|truncate(200, True)}}</p>
-        <p>{{ opinion.how_would_you_improve_it}}</p>
-      </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <button type="button" class="btn btn-success text-wrap" >About</button>
+    </div>
+     <div class="col-sm-12 col-md-6 col-lg-6">
+         <a href="{{ url_for('update_charity_info') }}">
+<button type="button" class="btn btn-success text-wrap" >Charity</button>
+</a>
+    </div>
+  
+     <div class="col-sm-12 col-md-6 col-lg-6">
+         <a href="{{ url_for('Admin_update_reviews') }}">
+     <button type="button" class="btn btn-success text-wrap">Reviews</button>
+     </a>
     </div>
   </div>
+</div>
 
-
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
-  </script>
-
-  {% endfor %}
-  
-  {% endblock %}
+{% endblock %}

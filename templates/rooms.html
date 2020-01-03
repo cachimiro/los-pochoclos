@@ -205,18 +205,21 @@ h3{
 {% extends 'base.html' %} {% block content %}
 <h2>{{ page_title }}</h2>
 <div class="container">
+{% for fan in fan %}
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <h3>Main house</h3>
-       
-          <p>We offer a range og rooms to suit your needs. all of our rooms have storage and satelite Tv. Some rooms have a privet bathroom
-          all you can shere with aonter room so if you are in a big group you can share the same bathroom. we also offer rooms with (A.C) they all 
-          have a private bathroom.   <span class="fade-text">free parking at all time</span>.
+        <h3>{{ fan.title }}</h3>
+      
+
+
+
+
+          <p>{{ fan.subject }}    <span class="fade-text">{{ fan.price }}</span>
           
            
            </p>
     </div>
-
+   {% endfor %}
         <div class="col-lg-11 col-md-11 col-sm-12">
   <div class="big-room-image">
     <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
@@ -268,24 +271,32 @@ h3{
     <div class="column">
       <img class="room-image cursor" src="https://i.pinimg.com/originals/94/dd/57/94dd573e4b4de604ea7f33548da99fd6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
     </div>
+    <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
     </div>
     
 </div>
 </div>
 </div>
 </div>
+
     </div>
   <hr class="featurette-divider">
+  
 </div>
-
 <div class="container">
+  {% for ac in ac %}
     <div class="row">
       <div class="col-12">
-        <h3>A.C Rooms</h3>
-        <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
-        to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
-        the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
+         <h3>{{ ac.title }}</h3>
+      
+
+
+
+
+          <p>{{ ac.subject }}    <span class="fade-text">{{ ac.price }}</span>
+           </p>
       </div>
+      {% endfor %}
        <div class="col-lg-11 col-md-11 col-sm-12">
   <div class="big-room-image-2">
     <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
@@ -346,13 +357,19 @@ h3{
 </div>
 
 <div class="container">
+    {% for cabin in cabin %}
     <div class="row">
       <div class="col-12">
-        <h3>Cabin</h3>
-        <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
-        to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
-        the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
+         <h3>{{ cabin.title }}</h3>
+      
+
+
+
+
+          <p>{{ cabin.subject }}    <span class="fade-text">{{ cabin.price }}</span>
+           </p>
       </div>
+      {% endfor %}
       <div class="col-lg-11 col-md-11 col-sm-12">
   <div class="big-room-image-3">
     <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
@@ -414,13 +431,19 @@ h3{
 </div>
 
 <div class="container">
+     {% for camp in camp %}
     <div class="row">
       <div class="col-12">
-        <h3>camping</h3>
-        <p> We provide a cabin  with  cooking facilities, where you can cook your own meals and, but if you wish to just 
-        to sit back and relax you can still stay at the cabin and all the food will be provided by are amazing cookes. 
-        the cabin fits 4 but if you wish to fit 5 or 6 people please get in touch and we will sort it for you   <span class="fade-text">free parking at all time</span>.</p>
+         <h3>{{ camp.title }}</h3>
+      
+
+
+
+
+          <p>{{ camp.subject }}    <span class="fade-text">{{ camp.price }}</span>
+           </p>
       </div>
+      {% endfor %}
       <div class="col-lg-11 col-md-11 col-sm-12">
   <div class="big-room-image-4">
     <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
