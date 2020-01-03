@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+{% for data in data %}
+<h3 class="why-we-do-it"> Why we do it section</h3>
+  <form action="{{ url_for('update_charity_data', data_id=data._id) }}" method="POST">
+<div class="form-group">
+    <label for="name">Cabin Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ data.title }}">
+   
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Text</label>
+    <textarea class="form-control" id="subject" name="subject" rows="3">{{ data.subject }}</textarea>
+  </div>
+  </form>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+{% endfor %}
+
+{% endblock %}

@@ -43,11 +43,18 @@ a{
     <div class="col-sm-12 col-md-6 col-lg-6">
       <button type="button" class="btn btn-success text-wrap" >About</button>
     </div>
+     
      <div class="col-sm-12 col-md-6 col-lg-6">
-         <a href="{{ url_for('update_charity_info') }}">
-<button type="button" class="btn btn-success text-wrap" >Charity</button>
-</a>
-    </div>
+      <div class="dropdown">
+    <button class="btn btn-success dropdown-toggle text-wrap" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Charity
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{ url_for('update_charity_info') }}">Main title</a>
+    <a class="dropdown-item" href="{{ url_for('update_charity_info_1') }}">Why we do it</a>
+    <a class="dropdown-item" href="{{ url_for('update_charity_info_2') }}">How we do it section</a>
+  </div>
+</div>
   
      <div class="col-sm-12 col-md-6 col-lg-6">
          <a href="{{ url_for('Admin_update_reviews') }}">

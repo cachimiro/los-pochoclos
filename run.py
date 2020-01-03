@@ -150,7 +150,7 @@ def charity():
    
 @app.route('/update_charity')
 def update_charity_info():
-    return render_template("admin-charity.html", char=mongo.db.char.find(), data=mongo.db.data.find(), cha=mongo.db.data_cha.find())
+    return render_template("admin-charity.html", char=mongo.db.char.find())
 
 
 @app.route('/update_charity_info/<char_id>', methods=["POST"])
@@ -162,9 +162,14 @@ def update_charity(char_id):
         'title2':request.form.get('title2'),
         
     })
-    return redirect(url_for('update_charity_info'))
+    return redirect(url_for('Admin_update_reviews_and_more'))
     
-@app.route('/update_charity_info/<data_id>', methods=["POST"])
+@app.route('/update_charity_1')
+def update_charity_info_1():
+    return render_template("admin-1.html",data=mongo.db.data.find())
+
+    
+@app.route('/update_charity_info_1/<data_id>', methods=["POST"])
 def update_charity_data(data_id):
     data = mongo.db.data
     data.update( {'_id': ObjectId(data_id)},
@@ -173,9 +178,14 @@ def update_charity_data(data_id):
         'subject':request.form.get('subject'),
         
     })
-    return redirect(url_for('update_charity_info'))
+    return redirect(url_for('Admin_update_reviews_and_more'))
     
-@app.route('/update_charity_info/<cha_id>', methods=["POST"])
+@app.route('/update_charity_2')
+def update_charity_info_2():
+    return render_template("admin-2.html",cha=mongo.db.data_cha.find())
+
+    
+@app.route('/update_charity_info_2/<cha_id>', methods=["POST"])
 def update_charity_data_1(cha_id):
     data_cha = mongo.db.data_cha
     data_cha.update( {'_id': ObjectId(cha_id)},
@@ -184,9 +194,9 @@ def update_charity_data_1(cha_id):
         'subject':request.form.get('subject'),
         
     })
-    return redirect(url_for('update_charity_info'))
+    return redirect(url_for('Admin_update_reviews_and_more'))
    
-# to be able to update the charity information   
+
 
 @app.route('/admin')
 def Admin_update_reviews_and_more():
