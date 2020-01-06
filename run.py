@@ -1,7 +1,7 @@
 import os
 import json
 import click
-from flask import Flask, render_template, request,redirect, flash, url_for, 
+from flask import Flask, render_template, request,redirect, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
