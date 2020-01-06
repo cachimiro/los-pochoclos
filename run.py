@@ -4,7 +4,7 @@ import click
 from flask import Flask, render_template, request,redirect, flash, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from functools import wraps
+
 
 
 
@@ -277,15 +277,7 @@ def logout():
     return redirect(url_for('log'))
     
     
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('please Login!!')
-            return redirect(url_for('log'))
-    return wrap
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
