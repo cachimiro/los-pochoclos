@@ -23,7 +23,6 @@ docutils==0.15.2
 enum34==1.1.6
 Flask==1.0.4
 future==0.18.2
-futures==3.3.0
 idna==2.6
 ikpdb==1.2.3
 Inflector==2.0.12
