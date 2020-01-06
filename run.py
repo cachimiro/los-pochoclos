@@ -1,7 +1,7 @@
 import os
 import json
 import click
-from flask import Flask, render_template, request,redirect, flash, url_for, session
+from flask import Flask, render_template, request,redirect, flash, url_for, 
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -282,7 +282,7 @@ def logout():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
             
    
          
