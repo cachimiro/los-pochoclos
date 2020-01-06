@@ -90,7 +90,7 @@ button{
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-heading">
-        {% for char in char %}
+        {% for char in chars %}
         <h1 style=" text-align:  center; margin:10px">{{ char.title }}</h1>
         <h2 class="subheading" style=" text-align:  center">{{ char.title2 }}</h2>
         {% endfor %}
@@ -100,7 +100,7 @@ button{
         </div>
         </header>
         <section>
-          {% for data in data %}
+          {% for data in datas %}
           <div class="container">
             <div class="row">
               <div class="col-lg-7 col-md-7 ">
@@ -153,7 +153,7 @@ button{
                   <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  style="width:100%"/>
                                 
        </div>
-       {% for data_cha in cha %}
+       {% for data_cha in chas %}
      <div class="col-lg-7 col-md-7 ">
    <h3 class="header-what-we-do"> {{ data_cha.title }}</h3>
    <p>{{ data_cha.subject }}</p>

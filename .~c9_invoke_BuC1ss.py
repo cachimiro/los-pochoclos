@@ -1,10 +1,9 @@
 import os
 import json
 import click
-from flask import Flask, render_template, request,redirect, flash, url_for, session
+from flask import Flask, render_template, request,redirect, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from functools import wraps
 
 
 
@@ -184,7 +183,7 @@ def update_charity(char_id):
     
 @app.route('/update_charity_1')
 def update_charity_info_1():
-    return render_template("admin-1.html",datas=mongo.db.data.find())
+    return render_template("admin-1.html",data=mongo.db.data.find())
 
     
 @app.route('/update_charity_info_1/<data_id>', methods=["POST"])
@@ -200,7 +199,7 @@ def update_charity_data(data_id):
     
 @app.route('/update_charity_2')
 def update_charity_info_2():
-    return render_template("admin-2.html",chas=mongo.db.data_cha.find())
+    return render_template("admin-2.html",cha=mongo.db.data_cha.find())
 
     
 @app.route('/update_charity_info_2/<cha_id>', methods=["POST"])
@@ -216,14 +215,14 @@ def update_charity_data_1(cha_id):
    
 
 
-@app.route('/adminhdfsgeydhfustsgdjftstjdctstehdjj')
+@app.route('/admin')
 def Admin_update_reviews_and_more():
    return render_template("admin.html")
    
 # this line of code is for the managers to update their reviews and delete them
 @app.route('/admin_reviews')
 def Admin_update_reviews():
-   return render_template("admin-reviews.html", opinions=mongo.db.opinion.find())
+   return render_template("admin-reviews.html", opinion=mongo.db.opinion.find())
    
    
 @app.route('/edit_review/<opinion_id>')
@@ -253,39 +252,16 @@ def delete_opinion(opinion_id):
     
 
 
-@app.route('/login')
-def log():
-    return render_template('login.html')
 
-@app.route('/loginhdyrfjksyeygdhjdysttdhfjjdsyydhfjdjsyhdhd', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
    error = None
    if request.method == 'POST':
        if request.form['username'] !='tiggy-curry' or request.form['password'] !='Antigone1':
            error = "invalid information please try again."
        else:
-           session['logged_in'] = True
-           flash('You are in! ')
            return render_template('admin.html')
        return render_template('login.html', error=error)
-       
-       
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('You are logged out! ')
-    return redirect(url_for('log'))
-    
-    
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('please Login!!')
-            return redirect(url_for('log'))
-    return wrap
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

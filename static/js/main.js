@@ -1,16 +1,39 @@
 function showMore(id) {
-   var truncateReviews = document.getElementById("{{ opinion._id }}_truncated");
-  var fullReviews = document.getElementById("{{ opinion._id }}_full");
-document.getElementById("{{ opinion._id}}_show").click();
- if (truncateReviews.style.display == "block") {
-   fullReviews.style.display == "none";
+   var truncateReviews = document.getElementById(id+"_truncated"); 
+  var fullReviews = document.getElementById(id+"_full");
+  var show = document.getElementById(id+"_show");
+document.getElementById(id+"_show");
+ if (truncateReviews.style.display =="block") {
+   fullReviews.style.display = "block";
+   truncateReviews.style.display = "none";
+   show.innerText = "Show Less";
+   
     
- } else if ( fullReviews.style.display == "block"){
-   truncateReviews.style.display =="none";  
+ } else{
+   truncateReviews.style.display ="block"; 
+   fullReviews.style.display ="none";
+   show.innerText = "show More";
  
- } else {
-  truncateReviews.style.display == "block";
+ }
+
+ }
  
-}
+ function showMores(ids) {
+   var truncateReviewss = document.getElementById(ids+"_truncateded"); 
+  var fullReviewss = document.getElementById(ids+"_fulls");
+  var shows = document.getElementById(ids+"_shows");
+document.getElementById(ids+"_show");
+ if (truncateReviewss.style.display =="block") {
+   fullReviewss.style.display = "block";
+   truncateReviewss.style.display = "none";
+   shows.innerText = "show less";
+   
+    
+ } else{
+   truncateReviewss.style.display ="block"; 
+   fullReviewss.style.display ="none";
+   shows.innerText = "show More";
+ 
+ }
 
  }

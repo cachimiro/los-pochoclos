@@ -11,11 +11,11 @@
     
 </style>
 {% extends 'base.html' %} {% block content %}
-{% for char in char %}
+{% for char in chars %}
 <h3> title and subtitle of charity</h3>
   <form action="{{ url_for('update_charity', char_id=char._id) }}" method="POST">
 <div class="form-group">
-    <label for="name">Cabin Title</label>
+    <label for="name"> Title</label>
     <input type="text" class="form-control" id="title" name="title" value="{{ char.title }}">
    
   </div>

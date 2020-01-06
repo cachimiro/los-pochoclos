@@ -11,20 +11,28 @@
  .hide-all-text{
   display: none;
  }
+ button{
+  border:none;
+  background-color: inherit;
+  color: #1443c5;
  
+ }
+ button:hover{
+  color: #2ee43c;
+ }
 </style>
 {% extends 'base.html' %} {% block content %}
 
 <h1>Reviews</h1>
 
-{% for opinion in opinion | reverse %}
+{% for opinion in opinions | reverse %}
 <h2> {{ opinion.name }} {{ opinion.surname }} </h2>
 <h3>{{ opinion.Title}} </h3>
-<p id="{{ opinion._id }}_truncated">{{ opinion.Opinion|truncate(200, True)}}</p>
+<p id="{{ opinion._id }}_truncated" style="display: block;">{{ opinion.Opinion|truncate(200, True)}}</p>
 <p id="{{ opinion._id }}_full" class="hide-all-text" style="display: none;">{{ opinion.Opinion }}</p>
 
-<button onclick="showMore('{{ opinion._id }}')" id="{{ opinion._id }}_show">Show more</button>
-<button type="button" id="{{ opinion._id }}_hide">Read less</button>
+<button onclick="showMore('{{ opinion._id }}')" id="{{ opinion._id }}_show">Show More</button>
+
 {% endfor %}
 
 <hr> 

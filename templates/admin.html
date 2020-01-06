@@ -22,6 +22,21 @@ a{
   margin:20px;
   text-align: center;
 }
+#style-bottom-links{
+  text-decoration: none;
+}
+#style-bottom-links:hover{
+  color: #20cad2;
+}
+h3{
+  text-align: center;
+
+}
+#centre{
+  text-align: center;
+  color:lightblue;
+}
+
 </style>
 {% extends 'base.html' %} {% block content %}
 <h3> Administration </h3>
@@ -40,8 +55,17 @@ a{
   </div>
 </div>
     </div>
+    <a href="{{ url_for('update_about_data') }}">
     <div class="col-sm-12 col-md-6 col-lg-6">
       <button type="button" class="btn btn-success text-wrap" >About</button>
+      </a>
+    </div>
+    
+    
+     <a href="{{ url_for('Admin_update_reviews') }}">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <button type="button" class="btn btn-success text-wrap" >Reviews</button>
+      </a>
     </div>
      
      <div class="col-sm-12 col-md-6 col-lg-6">
@@ -56,12 +80,32 @@ a{
   </div>
 </div>
   
-     <div class="col-sm-12 col-md-6 col-lg-6">
-         <a href="{{ url_for('Admin_update_reviews') }}">
-     <button type="button" class="btn btn-success text-wrap">Reviews</button>
-     </a>
+  </div>
+</div>
+
+ <div class="col-sm-12 col-md-6 col-lg-6">
+<a href="{{ url_for('logout') }}">
+<button type="button" class="btn btn-danger text-wrap"  >Logout</button>
+</a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-3 col-lg-3 ">
+      <a href="{{ url_for('get_reviews') }}" id="style-bottom-links">Go TO Reviews</a>
+    </div>
+     <div class="col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ url_for('about') }}"id="style-bottom-links">Go TO About</a>
+    </div>
+     <div class="col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ url_for('charity') }}"id="style-bottom-links">Go TO Charity</a>
+    </div>
+     <div class="col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ url_for('rooms') }}"id="style-bottom-links">Go TO Rooms</a>
     </div>
   </div>
 </div>
+{% for message in get_flashed_messages() %}
+<p id="centre">{{ message }}</p>
+{% endfor %}
 
 {% endblock %}

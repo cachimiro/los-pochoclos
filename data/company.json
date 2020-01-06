@@ -2,35 +2,35 @@
   {"name": "Antigone Curry",
       "discription":"CEO founder and owner of Los Pochocolos, also the founder of Tanya'paz charity",
       "image_source":"../static/img/portada-mama.jpg",
-      "url": "antigone",
-      "extra_info":"I was born in Cesar Colombia, in a village called Poponte. daugther of two english parents. brought the farm in carabean coast of Colombia and decided to run my own buisness."
+      "url": "antigone"
+      
   },
   {
       "name": "Reynaldo Santos",
       "discription":"General Manager",
-      "image_source":"https://m.media-amazon.com/images/G/01/author-pages/no-profile-image-placeholder-es._CB484118601_.png",
-      "url": "reynaldo",
-       "extra_info":"Born in the Magdalena Departmet of north colombia. Me and my family moved to lost Los Pochocolos at a very young aga. I met Antigone's familly where we became great familli friends. now due to my trust with the familly I became general manager of the farm."
+      "image_source":"../static/img/rey.jpg",
+      "url": "reynaldo"
+       
   },
    {
       "name": "Yanelis Santos",
       "discription":"Chef and house keeper",
       "image_source":"../static/img/yanelis-1.jpg",
-      "url": "yanelis",
-       "extra_info":" Sister of Reynaldo I got offers a place to work and get a futere with this company as a chef and houskeeping"
+      "url": "yanelis"
+       
   },
    {
       "name": "Dayner Torregroza",
       "discription":"Maintance and gardener",
       "image_source":"../static/img/pinga.jpg",
-      "url": "dayner",
-       "extra_info":"working as a garrdener and maintenence is not a esy job, but very rewarding to do every day, thier are new challenges, that not only challenge me physicaly but mentaly as well."
+      "url": "dayner"
+       
   },
   {
        "name": "Johann Aguirre",
       "discription":"IT Administrator and Developer",
       "image_source":"../static/img/johann.jpg",
-      "url": "johann",
-       "extra_info":""
+      "url": "johann"
+       
   }
 ]

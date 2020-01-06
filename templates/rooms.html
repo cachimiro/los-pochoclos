@@ -205,7 +205,7 @@ h3{
 {% extends 'base.html' %} {% block content %}
 <h2>{{ page_title }}</h2>
 <div class="container">
-{% for fan in fan %}
+{% for fan in fans %}
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <h3>{{ fan.title }}</h3>
@@ -284,7 +284,7 @@ h3{
   
 </div>
 <div class="container">
-  {% for ac in ac %}
+  {% for ac in acs %}
     <div class="row">
       <div class="col-12">
          <h3>{{ ac.title }}</h3>
@@ -357,7 +357,7 @@ h3{
 </div>
 
 <div class="container">
-    {% for cabin in cabin %}
+    {% for cabin in cabins %}
     <div class="row">
       <div class="col-12">
          <h3>{{ cabin.title }}</h3>
@@ -372,11 +372,11 @@ h3{
       {% endfor %}
       <div class="col-lg-11 col-md-11 col-sm-12">
   <div class="big-room-image-3">
-    <img src="../static/img-room/cuaro-3.jpg" style="width:100%">
+    <img src="../static/img/cabana.jpg" style="width:100%">
   </div>
 
   <div class="big-room-image-3">
-    <img src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%">
+    <img src="../static/img/cuarto-cabana.jpg" style="width:100%">
   </div>
 
   <div class="big-room-image-3">
@@ -404,10 +404,10 @@ h3{
   <div class="row move-images">
      <div class="col-lg-11 col-md-11 col-sm-12">
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="room-image-3 cursor" src="../static/img/cabana.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
     </div>
     <div class="column-3">
-      <img class="room-image-3 cursor" src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      <img class="room-image-3 cursor" src="../static/img/cuarto-cabana.jpg"style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
     </div>
     <div class="column-3">
       <img class="room-image-3 cursor" src="https://www.w3schools.com/howto/img_snow.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
@@ -431,7 +431,7 @@ h3{
 </div>
 
 <div class="container">
-     {% for camp in camp %}
+     {% for camp in camps %}
     <div class="row">
       <div class="col-12">
          <h3>{{ camp.title }}</h3>
@@ -552,10 +552,10 @@ function showSlidesTwo(s) {
       slidesTwo[i].style.display = "none";
   }
   for (i = 0; i < dotsTwo.length; i++) {
-      dotsTwo[i].className = dotsTwo[i].className.replace(" active", "");
+      dotsTwo[i].className = dotsTwo[i].className.replace(" active-1", "");
   }
   slidesTwo[slideIndexTwo-1].style.display = "block";
-  dotsTwo[slideIndexTwo-1].className += " active";
+  dotsTwo[slideIndexTwo-1].className += " active-1";
 }
 // slide show for cabin
 
@@ -580,10 +580,10 @@ function showSlidesThree(f) {
       slidesThree[i].style.display = "none";
   }
   for (i = 0; i < dotsThree.length; i++) {
-      dotsThree[i].className = dotsThree[i].className.replace(" active", "");
+      dotsThree[i].className = dotsThree[i].className.replace(" active-2", "");
   }
   slidesThree[slideIndexThree-1].style.display = "block";
-  dotsThree[slideIndexThree-1].className += " active";
+  dotsThree[slideIndexThree-1].className += " active-2";
 }
 // slide show camping
 var slideIndexFour = 1;
@@ -607,10 +607,10 @@ function showSlidesFour(o) {
       slidesFour[i].style.display = "none";
   }
   for (i = 0; i < dotsFour.length; i++) {
-      dotsFour[i].className = dotsFour[i].className.replace(" active", "");
+      dotsFour[i].className = dotsFour[i].className.replace(" active-3", "");
   }
   slidesFour[slideIndexFour-1].style.display = "block";
-  dotsFour[slideIndexFour-1].className += " active";
+  dotsFour[slideIndexFour-1].className += " active-3";
 }
 </script>
 

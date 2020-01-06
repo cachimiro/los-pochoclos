@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-{% for data_cha in cha %}
+{% for data_cha in chas %}
 <h3 class="why-we-do-it"> how we do it section</h3>
   <form action="{{ url_for('update_charity_data_1', cha_id=data_cha._id) }}" method="POST">
 <div class="form-group">
-    <label for="name">Cabin Title</label>
+    <label for="name"> Title</label>
     <input type="text" class="form-control" id="title" name="title" value="{{ data_cha.title }}">
    
   </div>

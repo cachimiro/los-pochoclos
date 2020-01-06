@@ -2,7 +2,7 @@
    
 </style>
 {% extends 'base.html' %} {% block content %}
-{% for fan in fan %}
+{% for fan in fans %}
   <form action="{{ url_for('update_rooms', fan_id=fan._id) }}" method="POST">
 <div class="form-group">
     <label for="name">Fan rooms Title</label>

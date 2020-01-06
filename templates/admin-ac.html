@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-{% for ac in ac %}
+{% for ac in acs %}
   <form action="{{ url_for('update_rooms_ac', ac_id=ac._id) }}" method="POST">
 <div class="form-group">
     <label for="name">A.C rooms Title</label>
