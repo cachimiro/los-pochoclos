@@ -3,20 +3,27 @@
   text-align: center;
   color:red;
 }
+  @media only screen and (max-width: 800px) {
+    button{
+    padding: 30px !important;
+  }
+}
+    
+
 </style>
 
 
 {% extends 'base.html' %} {% block content %}
 <div class="container">
     <div class="row  no-gutters">
-        <div class="col-4">
+        <div class="col-sm-12 col-md-4 col-lg-4">
 <form action="{{ url_for('login') }}" method="POST">
     <input type="text" name="username" placeholder="username" value="{{ request.form.username }}"/>
     </div>
-    <div class="col-4">
+    <div class="col-sm-12col-md-4 col-lg-4">
     <input type="password" name="password" placeholder="password" value="{{ request.form.password }}"/>
     </div>
-     <div class="col-4">
+     <div class="col-sm-12 col-md-4 col-lg-4">
     <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     </div>

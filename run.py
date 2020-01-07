@@ -1,7 +1,7 @@
 import os
 import json
 import click
-from flask import Flask, render_template, request,redirect, flash, url_for
+from flask import Flask, render_template, request,redirect, flash, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -257,7 +257,7 @@ def delete_opinion(opinion_id):
 def log():
     return render_template('login.html')
 
-@app.route('/loginhdyrfjksyeygdhjdysttdhfjjdsyydhfjdjsyhdhd', methods=['GET', 'POST'])
+@app.route('/adminhdfsgeydhfustsgdjftstjdctstehdjj', methods=['GET', 'POST'])
 def login():
    error = None
    if request.method == 'POST':
@@ -269,7 +269,7 @@ def login():
            return render_template('admin.html')
        return render_template('login.html', error=error)
        
-       
+     
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
