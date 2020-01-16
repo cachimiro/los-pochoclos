@@ -2,7 +2,7 @@
 {% for about in abouts %}
   <form action="{{ url_for('update_about', about_id=about._id) }}" method="POST">
 <div class="form-group">
-    <label for="name">A.C rooms Title</label>
+    <label for="name">About</label>
     <input type="text" class="form-control" id="title" name="title" value="{{ about.title }}">
   
  

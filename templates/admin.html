@@ -67,6 +67,13 @@ h3{
       <button type="button" class="btn btn-success text-wrap" >Reviews</button>
       </a>
     </div>
+    
+    
+    <a href="{{ url_for('update_index_data') }}">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <button type="button" class="btn btn-success text-wrap" >Front Page</button>
+      </a>
+    </div>
      
      <div class="col-sm-12 col-md-6 col-lg-6">
       <div class="dropdown">
@@ -101,6 +108,9 @@ h3{
     </div>
      <div class="col-sm-6 col-md-3 col-lg-3">
       <a href="{{ url_for('rooms') }}"id="style-bottom-links">Go TO Rooms</a>
+    </div>
+     <div class="col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ url_for('index') }}"id="style-bottom-links">Go TO Main Page</a>
     </div>
   </div>
 </div>

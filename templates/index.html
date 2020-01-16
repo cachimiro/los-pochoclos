@@ -46,16 +46,12 @@
 </style>
 <div class="container">
 <div class="row">
+  {% for index in indexs %}
     <div class="col-sm-12 col-lg-12 col-md-12 ">
-        <h3>Los Pochocolos</h3>
-        <p>  Los Pocholos is a family run finca on the Caribbean coast of Colombia and is located just a five minute walk away from the beach. From the nearest cities, we are just over 1 hour away from Rioacha, 2 hours from Santa Marta, a 7 minute drive from the village of Mingueo and 45 minutes to Tayrona National Park.
-        We offer 6 large rooms in the main house, 5 rooms in a separate building adjacent to the house, a self-catering cabin with 2 bedrooms and camping. There is a large kitchen in the 
-        main house, allowing us to serve delicious and fresh Colombian meals to our guests, for a small extra cost. Our menu will change daily as we buy local produce so there will always be a variety, and we are always happy
-        to provide vegetarian options. 
-        The finca overlooks the river and is surrounded by our coconut trees providing a beautiful area to relax in, you can find parrots, monkeys, iguanas, pelicans and many other tropical animals all in the nearby area. 
-        We can arrange transport for any day trips you may wish to go on, for example to the nearby Tayrona National Park or flamingo watching. If you need tranfers to and from the airports, we can arrange that too (with a little notice!).
-        Please let us know if there is anything we can help you with, we hope you enjoy your time in La Guajira!
-     </p>
+        <h3>{{ index.title }}</h3>
+        <p>{{ index.subject }}</p>
+     
+     {% endfor %}
            </div>         
         </div>
         <!--phtos for main house-->
@@ -72,7 +68,7 @@
     <img src="../static/img/playa-1.jpg" alt="rooms" style="width:100%" onclick="expandImage(this);" id="togle-2">
   </div>
   <div class="column">
-    <img src="https://www.thesun.co.uk/wp-content/uploads/2019/05/NINTCHDBPICT000490292497.jpg" alt="rooms" style="width:100%" onclick="expandImage(this);"id="togle-3">
+    <img src="../static/img-room/mar-1.jpg" alt="rooms" style="width:100%" onclick="expandImage(this);"id="togle-3">
   </div>
 </div>
 </div>
@@ -91,10 +87,10 @@
     <img src="../static/img/yaneli-cosina.jpg" alt="cosine" style="width:100%" onclick="expandImageTwo(this);" id="togle-5">
   </div>
   <div class="column">
-    <img src="https://s7d2.scene7.com/is/image/ritzcarlton/RCBARCE_00387-1" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);" id="togle-6">
+    <img src="../static/img-room/cuartos-aira.jpg" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);" id="togle-6">
   </div>
   <div class="column">
-    <img src="https://s7d2.scene7.com/is/image/ritzcarlton/50514363-Arts%20hotel%20-%20april%202018%2020" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);"id="togle-7">
+    <img src="../static/img-room/vista-frente-casa.jpg" alt="Aircon rooms" style="width:100%" onclick="expandImageTwo(this);"id="togle-7">
   </div>
 </div>
 </div>
@@ -107,16 +103,16 @@
   <div class="container">
                    <div class="row ">
   <div class="column">
-    <img src="https://i.ytimg.com/vi/WmYCUljsrDg/maxresdefault.jpg" alt="Cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-8">
+    <img src="../static/img-room/vista-frente-casa.jpg" alt="birds" style="width:100%" onclick="expandImageThree(this);" id="togle-8">
   </div>
   <div class="column">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyPNCT7KWZ60IXLkWump0Nowni9qCIdzk9nPIn89rTKNZbCk_x&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-9">
+    <img src="../static/img-room/platanera.jpg" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-9">
   </div>
   <div class="column">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_WHUav-OsZirK8rH-toj9PUoSI5TK_6OjANGx5PGjhju3TTX&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-10">
+    <img src="../static/img-room/pescador.jpg" alt="cabin" style="width:100%" onclick="expandImageThree(this);" id="togle-10">
   </div>
   <div class="column">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXA1s1m7lxx1nX-Viob1kxPCUv59X9mabN4jiYKSwToJfL3oFi&s" alt="cabin" style="width:100%" onclick="expandImageThree(this);"id="togle-11">
+    <img src="../static/img-room/rio-playa.jpg" alt="cabin" style="width:100%" onclick="expandImageThree(this);"id="togle-11">
   </div>
 </div>
 </div>
@@ -129,16 +125,16 @@
  <div class="container">
                    <div class="row ">
   <div class="column">
-    <img src="https://www.gonescamping.com/wp-content/uploads/2018/05/cropped-camping-hero_0_0.jpg" alt="Cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-12">
+    <img src="../static/img-room/vista.jpg" alt="Cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-12">
   </div>
   <div class="column">
-    <img src="https://lqp-p-imgs.s3-ap-south-1.amazonaws.com/faceview/c1d/e9j/a9d/a1f/affimgs/az-large-5034923.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-13">
+    <img src="../static/img-room/vista-al-mar.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-13">
   </div>
   <div class="column">
-    <img src="https://www.switchbacktravel.com/sites/default/files/articles%20/Camping%20Chairs%20Round-up%20%28m%29.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-14">
+    <img src="../static/img-room/vista-al-rio.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);" id="togle-14">
   </div>
   <div class="column">
-    <img src="https://asomammoth.com/wp-content/uploads/2019/07/camp-in-mammoth-lakes.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);"id="togle-15">
+    <img src="../static/img-room/vista-frente-casa.jpg" alt="cabin" style="width:100%" onclick="expandImageFour(this);"id="togle-15">
   </div>
 </div>
 </div>
@@ -149,14 +145,7 @@
  <hr>
  
  <!--charity -->
-        <div class="post-preview">
-            <a href="{{ url_for('charity') }}">
-                <h2 class="post-title">
-                    Tanya's Paz charity: </h2><p>  A charity ispired by <strong>Tanya Angelica Aguirre Curry</strong> and devoloped by <strong>Antigone Curry.</strong>
-                    (mother) of Tanya</p>
-               
-            
-        <hr>
+ 
             
        
         <!-- Pager -->

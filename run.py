@@ -19,7 +19,23 @@ app.secret_key = "cachimiro"
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", indexs=mongo.db.index.find())
+    
+    
+@app.route('/update_index')
+def update_index_data():
+    return render_template("admin-index.html", indexd=mongo.db.index.find())
+
+@app.route('/update_indexs/<index_id>', methods=["POST"])
+def update_indexss(index_id):
+    index = mongo.db.index
+    index.update( {'_id': ObjectId(index_id)},
+    {
+        'title':request.form.get('title'),
+        'subject': request.form.get('subject'),
+        
+    })
+    return redirect(url_for('Admin_update_reviews_and_more'))
 
 
 # code to be ble to see reviews
@@ -282,7 +298,7 @@ def logout():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=False)
+            debug=True)
             
    
          

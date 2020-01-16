@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+{% for indexd in index %}
+  <form action="{{ url_for('update_indexss', index_id=index._id) }}" method="POST">
+<div class="form-group">
+    <label for="name">Main Page</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ index.title }}">
+  
+ 
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Text</label>
+    <textarea class="form-control" id="subject" name="subject" rows="3">{{ index.subject }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+{% endfor %}
+
+</form>
+ 
+
+{% endblock %}
