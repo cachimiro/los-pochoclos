@@ -24,7 +24,7 @@ def index():
     
 @app.route('/update_index')
 def update_index_data():
-    return render_template("admin-index.html", indexd=mongo.db.index.find())
+    return render_template("admin-index.html", indexs=mongo.db.index.find())
 
 @app.route('/update_indexs/<index_id>', methods=["POST"])
 def update_indexss(index_id):
@@ -178,7 +178,7 @@ def update_rooms_camp(camp_id):
 
 @app.route('/charity')
 def charity():
-   return render_template("charity.html", page_title="charity",datas=mongo.db.data.find(), chas=mongo.db.data_cha.find(), chars=mongo.db.char.find())
+   return render_template("charity.html", page_title="charity", chas=mongo.db.data_cha.find(), chars=mongo.db.char.find())
    
    
    
@@ -188,7 +188,7 @@ def update_charity_info():
 
 
 @app.route('/update_charity_info/<char_id>', methods=["POST"])
-def update_charity(char_id):
+def update_charity_main(char_id):
     char = mongo.db.char
     char.update( {'_id': ObjectId(char_id)},
     {
@@ -198,21 +198,7 @@ def update_charity(char_id):
     })
     return redirect(url_for('Admin_update_reviews_and_more'))
     
-@app.route('/update_charity_1')
-def update_charity_info_1():
-    return render_template("admin-1.html",datas=mongo.db.data.find())
 
-    
-@app.route('/update_charity_info_1/<data_id>', methods=["POST"])
-def update_charity_data(data_id):
-    data = mongo.db.data
-    data.update( {'_id': ObjectId(data_id)},
-    {
-        'title':request.form.get('title'),
-        'subject':request.form.get('subject'),
-        
-    })
-    return redirect(url_for('Admin_update_reviews_and_more'))
     
 @app.route('/update_charity_2')
 def update_charity_info_2():
@@ -232,7 +218,7 @@ def update_charity_data_1(cha_id):
    
 
 
-@app.route('/adminhdfsgeydhfustsgdjftstjdctstehdjj')
+@app.route('/admin')
 def Admin_update_reviews_and_more():
    return render_template("admin.html")
    
@@ -273,7 +259,7 @@ def delete_opinion(opinion_id):
 def log():
     return render_template('login.html')
 
-@app.route('/adminhdfsgeydhfustsgdjftstjdctstehdjj', methods=['GET', 'POST'])
+@app.route('/admin', methods=['GET', 'POST'])
 def login():
    error = None
    if request.method == 'POST':

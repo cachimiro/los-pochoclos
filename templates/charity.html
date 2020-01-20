@@ -1,9 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-  <!---- style for image slide show------>
+  {% block content %}
 
-<style>
-.mySlides {
+<!---- style for image slide show------><style>.mySlides {
   display: none;
 }
 
@@ -28,7 +27,7 @@ img {
   animation-name: fade;
   animation-duration: 3s;
   width: 80%;
-  
+
 
 }
 
@@ -57,21 +56,27 @@ img {
     font-size: 11px
   }
 }
-.header-what-we-do{
-  margin-top: 100px; 
+
+.header-what-we-do {
+  margin-top: 100px;
 
 }
+
 /*---------- style for buttons at the end of the section*/
-.col-lg-6, .col-md-6, .col-sm-6 button{
+
+.col-lg-6,
+.col-md-6,
+.col-sm-6 button {
   text-align: center;
-  padding:10px;
+  padding: 10px;
 }
-button{
+
+button {
   margin: 20px;
   border-radius: 10px;
-  text-decoration:none;
-  background-color:#1a88a6;
-  border:none;
+  text-decoration: none;
+  background-color: #1a88a6;
+  border: none;
   box-shadow: 4px 4px #c8c4c4;
 }
 
@@ -79,102 +84,92 @@ button{
 
 
 </style>
-<h2>
-  
-   {{ page_title }}
+<h2> {{ page_title }} </h2>
+<header class="masthead" style="background-image: url('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/198979_183783401664354_8256655_n.jpg?_nc_cat=107&_nc_ohc=fo7OV44w-2MAQn056HLddJiNwwdMlJGb7H2xHXyMq6WGMhgtGDJShV99A&_nc_ht=scontent-lht6-1.xx&oh=b607f42559864e66febb7cb282797aff&oe=5E6CB1C7')">
+  <div class="overlay">
+    </div>
+  <div class="container">
+    <div class="row"
+    ><div class="col-lg-8 col-md-10 mx-auto">
+      <div class="post-heading"> 
+      {% for char in chars %}
 
-</h2><header class="masthead" style="background-image: url('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/198979_183783401664354_8256655_n.jpg?_nc_cat=107&_nc_ohc=fo7OV44w-2MAQn056HLddJiNwwdMlJGb7H2xHXyMq6WGMhgtGDJShV99A&_nc_ht=scontent-lht6-1.xx&oh=b607f42559864e66febb7cb282797aff&oe=5E6CB1C7')"><div class="overlay">
-  
+<h1 style=" text-align:  center; margin:10px"> 
+{{ char.title }}
+</h1>
+<h2 class="subheading" style=" text-align:  center">
+   {{ char.title2 }}
+</h2> 
+{% endfor %}
 </div>
+</div>
+</div>
+</div>
+</header>
+<section>
+   {% for data_cha in chas %}
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      <div class="post-heading">
-        {% for char in chars %}
-        <h1 style=" text-align:  center; margin:10px">{{ char.title }}</h1>
-        <h2 class="subheading" style=" text-align:  center">{{ char.title2 }}</h2>
-        {% endfor %}
-        </div>
-        </div>
-        </div>
-        </div>
-        </header>
-        <section>
-          {% for data in datas %}
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-7 col-md-7 ">
-                <h3>{{ data.title }}</h3>
-<p>{{ data.subject }}</p>
-</div>
+<div class="col-lg-5 col-md-5 ">
+  <h3 class="header-what-we-do"> 
+  {{ data_cha.title }}
+</h3>
+<p> 
+{{ data_cha.subject }}
+
+</p>
 {% endfor %}
-<div class="col-lg-5 col-md-5 " id="slide-show-photos">
+</div>
+<div class="col-lg-7 col-md-7  " id="slide-show-photos">
   <div class="slideshow-container">
     <div class="mySlides fade">
-      <img src="../static/img/tanya.jpg" style="width:100%"></div>
+      <img src="../static/img/tanya.jpg" style="width:100%">
+      </div>
       <div class="mySlides fade">
         <img src="../static/img/tanya johann me.jpg" style="width:100%">
         </div>
         <div class="mySlides fade">
-          <img src="../static/img/tanya johann boat.jpg" style="width:100%">
+          <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/25386_102864843089544_4935509_n.jpg?_nc_cat=103&_nc_ohc=gEBut99aF3IAQkGh2dldj7rDEqOye1kls_eliVdeWwcZ1DdaCadag5gFQ&_nc_ht=scontent-lht6-1.xx&oh=cae8cc26c64154a938cf9d5bbbaead0b&oe=5E72ED2F" style="width:100%">
           </div>
           <div class="mySlides fade">
-            <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/25386_102864843089544_4935509_n.jpg?_nc_cat=103&_nc_ohc=gEBut99aF3IAQkGh2dldj7rDEqOye1kls_eliVdeWwcZ1DdaCadag5gFQ&_nc_ht=scontent-lht6-1.xx&oh=cae8cc26c64154a938cf9d5bbbaead0b&oe=5E72ED2F" style="width:100%">
+            <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/180900_177976592245035_1671228_n.jpg?_nc_cat=109&_nc_ohc=qDvnJq8rDvAAQloh-x4Y1ss8SHi2GQDt0S3Kc7WZ157JWn1C8r6mT0zFA&_nc_ht=scontent-lht6-1.xx&oh=0b086a2d586bd58b9278851fe02b9c69&oe=5E89726A" style="width:100%">
             </div>
             <div class="mySlides fade">
-              <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/180900_177976592245035_1671228_n.jpg?_nc_cat=109&_nc_ohc=qDvnJq8rDvAAQloh-x4Y1ss8SHi2GQDt0S3Kc7WZ157JWn1C8r6mT0zFA&_nc_ht=scontent-lht6-1.xx&oh=0b086a2d586bd58b9278851fe02b9c69&oe=5E89726A" style="width:100%">
+              <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/39856_129568613752500_1749319_n.jpg?_nc_cat=107&_nc_ohc=VbtnikZ4UBIAQm_39U4ICHl5PVwWSM9EfFt46WSFkuyafOAVk16vLfBNQ&_nc_ht=scontent-lht6-1.xx&oh=3916972b16bf0ef1aaa6dbd30f918e8c&oe=5E857C1F" style="width:100%">
               </div>
               <div class="mySlides fade">
-                <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/39856_129568613752500_1749319_n.jpg?_nc_cat=107&_nc_ohc=VbtnikZ4UBIAQm_39U4ICHl5PVwWSM9EfFt46WSFkuyafOAVk16vLfBNQ&_nc_ht=scontent-lht6-1.xx&oh=3916972b16bf0ef1aaa6dbd30f918e8c&oe=5E857C1F" style="width:100%">
+                <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168856492476_1335747_n.jpg?_nc_cat=100&_nc_ohc=_Y0Ii_6dvjcAQld-oXSXNZD6aHam7c5aFn1_Psz9tGSr24VNRF43ApxNg&_nc_ht=scontent-lht6-1.xx&oh=45c7b910adaab8b106013aae4438ef9c&oe=5E7C4A69" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                  <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168856492476_1335747_n.jpg?_nc_cat=100&_nc_ohc=_Y0Ii_6dvjcAQld-oXSXNZD6aHam7c5aFn1_Psz9tGSr24VNRF43ApxNg&_nc_ht=scontent-lht6-1.xx&oh=45c7b910adaab8b106013aae4438ef9c&oe=5E7C4A69" style="width:100%">
+                  <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168843159144_7658005_n.jpg?_nc_cat=105&_nc_ohc=C1_1UhY55poAQmDDsgh1mSU5BhCB98OIYsiea9VLHcAAWtw3R7zCmK9Qw&_nc_ht=scontent-lht6-1.xx&oh=c30c6dd46ef4eb20c48488902b23b23b&oe=5E679151" style="width:100%">
                   </div>
                   <div class="mySlides fade">
-                    <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168843159144_7658005_n.jpg?_nc_cat=105&_nc_ohc=C1_1UhY55poAQmDDsgh1mSU5BhCB98OIYsiea9VLHcAAWtw3R7zCmK9Qw&_nc_ht=scontent-lht6-1.xx&oh=c30c6dd46ef4eb20c48488902b23b23b&oe=5E679151" style="width:100%">
+                    <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168839825811_4312866_n.jpg?_nc_cat=103&_nc_ohc=7XZMiaFhE68AQlGjjlRyDXl-6vRoc4kv43HAD3T51gYsdx9m0FwPdykvA&_nc_ht=scontent-lht6-1.xx&oh=14b57c4db923190f0b434e5ee2c40ac8&oe=5E84D878" style="width:100%">
                     </div>
                     <div class="mySlides fade">
-                      <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168839825811_4312866_n.jpg?_nc_cat=103&_nc_ohc=7XZMiaFhE68AQlGjjlRyDXl-6vRoc4kv43HAD3T51gYsdx9m0FwPdykvA&_nc_ht=scontent-lht6-1.xx&oh=14b57c4db923190f0b434e5ee2c40ac8&oe=5E84D878" style="width:100%">
+                      <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168826492479_7425229_n.jpg?_nc_cat=102&_nc_ohc=P069FW_Xm0MAQmMMkUpeGYPFX3nCmj2GIx885TjCuPyCAKm8NxeiozWWA&_nc_ht=scontent-lht6-1.xx&oh=7587277eeb2a455100c6cf21e5ccabec&oe=5E7725B3" style="width:100%">
                       </div>
                       <div class="mySlides fade">
-                        <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168826492479_7425229_n.jpg?_nc_cat=102&_nc_ohc=P069FW_Xm0MAQmMMkUpeGYPFX3nCmj2GIx885TjCuPyCAKm8NxeiozWWA&_nc_ht=scontent-lht6-1.xx&oh=7587277eeb2a455100c6cf21e5ccabec&oe=5E7725B3" style="width:100%">
+                        <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168796492482_5337829_n.jpg?_nc_cat=111&_nc_ohc=h9tve8Wh-joAQlkQ4HomnAXcCsh_u3Y_tedr8m8sGSzLUf8caP8--Y27g&_nc_ht=scontent-lht6-1.xx&oh=75648782b4571c95bec1810f26d56d2e&oe=5E6C4F18" style="width:100%">
                         </div>
-                        <div class="mySlides fade">
-                          <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/23616_102168796492482_5337829_n.jpg?_nc_cat=111&_nc_ohc=h9tve8Wh-joAQlkQ4HomnAXcCsh_u3Y_tedr8m8sGSzLUf8caP8--Y27g&_nc_ht=scontent-lht6-1.xx&oh=75648782b4571c95bec1810f26d56d2e&oe=5E6C4F18" style="width:100%">
-                          </div>
+                        </div>
+                        </div>
                         
-                          </div>
-                          </div>
-                            
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-lg-5 col-md-5 ">
-                                
-                  <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  style="width:100%"/>
-                                
-       </div>
-       {% for data_cha in chas %}
-     <div class="col-lg-7 col-md-7 ">
-   <h3 class="header-what-we-do"> {{ data_cha.title }}</h3>
-   <p>{{ data_cha.subject }}</p>
-   
-{% endfor %}
-
-</div>
-</div>
+                        </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6">
-      <button>Chat With The Team<i class="fa fa-users"></i></button>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
-      <button>See Live Updates<i class="fa fa-users"></i></button>
-    </div>
-  </div>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6">
+<button>Chat With The Team<i class="fa fa-users">
+</i>
+</button>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<button>See Live Updates<i class="fa fa-users"></i></button>
+</div>
+</div>
 </div>
 </section>
-<hr>
 
 <script>
 var slideIndex=0;
@@ -193,14 +188,13 @@ function showSlides() {
   if (slideIndex > slides.length) {
     slideIndex=1
   }
-  
+
   slides[slideIndex-1].style.display="block";
   setTimeout(showSlides, 3000); // Change image every 2 seconds
-  
 }
- 
-  
-   
- 
+
+
+
+
 </script> 
 {% endblock %}
