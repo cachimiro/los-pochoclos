@@ -81,6 +81,7 @@ def update_about(about_id):
     {
         'title':request.form.get('title'),
         'subject': request.form.get('subject'),
+        'subjects': request.form.get('subjects'),
         
     })
     return redirect(url_for('Admin_update_reviews_and_more'))
