@@ -254,7 +254,7 @@ h3{
   <div class="row move-images">
      <div class="col-lg-11 col-md-11 col-sm-12">
     <div class="column">
-       <img class="room-image cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(2)" alt="fan">
+       <img class="room-image cursor" src="../static/img-room/cuaro-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="fan">
           </div>
     <div class="column">
       <img class="room-image cursor" src="../static/img-room/room-fan-1.jpg" style="width:100%" onclick="currentSlide(2)" alt="fan">
@@ -331,22 +331,22 @@ h3{
   <div class="row move-images">
      <div class="col-lg-11 col-md-11 col-sm-12">
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-3.jpg" style="width:100%" onclick="currentSlide(1)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-3.jpg" style="width:100%" onclick="currentSlideTwo(1)" alt="ac">
     </div>
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuartos-aira.jpg" style="width:100%" onclick="currentSlide(2)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuartos-aira.jpg" style="width:100%" onclick="currentSlideTwo(2)" alt="ac">
     </div>
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-5.jpg" style="width:100%" onclick="currentSlide(3)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-5.jpg" style="width:100%" onclick="currentSlideTwo(3)" alt="ac">
     </div>
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuaro-aire-vista.jpg" style="width:100%" onclick="currentSlide(4)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuaro-aire-vista.jpg" style="width:100%" onclick="currentSlideTwo(4)" alt="ac">
     </div>
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-7.jpg" style="width:100%" onclick="currentSlide(5)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-7.jpg" style="width:100%" onclick="currentSlideTwo(5)" alt="ac">
     </div>    
     <div class="column-2">
-      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-8.jpg" style="width:100%" onclick="currentSlide(6)" alt="ac">
+      <img class="room-image-2 cursor" src="../static/img-room/cuarto-aire-8.jpg" style="width:100%" onclick="currentSlideTwo(6)" alt="ac">
     </div>
     </div>
       <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
@@ -371,6 +371,11 @@ h3{
       </div>
       {% endfor %}
       <div class="col-lg-11 col-md-11 col-sm-12">
+        
+  <div class="big-room-image-3">
+    <img src="../static/img/w.jpg" style="width:100%">
+  </div>
+  
   <div class="big-room-image-3">
     <img src="../static/img/cabana.jpg" style="width:100%">
   </div>
@@ -391,10 +396,6 @@ h3{
     <img src="../static/img/vista-cabana.jpg" style="width:100%">
   </div>
     
-  <div class="big-room-image-3">
-    <img src="../static/img/w.jpg" style="width:100%">
-  </div>
-    
   <a class="prev-2" onclick="plusSlidesThree(-1)">❮</a>
   <a class="next-2" onclick="plusSlidesThree(1)">❯</a>
   </div>
@@ -403,24 +404,26 @@ h3{
 
   <div class="row move-images">
      <div class="col-lg-11 col-md-11 col-sm-12">
+       
+      <div class="column-3">
+      <img class="room-image-3 cursor" src="../static/img/w.jpg" style="width:100%" onclick="currentSlideThree(1)" alt="cabin">
+    </div>
+    
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/cabana.jpg" style="width:100%" onclick="currentSlide(1)" alt="cabin">
+      <img class="room-image-3 cursor" src="../static/img/cabana.jpg" style="width:100%" onclick="currentSlideThree(2)" alt="cabin">
     </div>
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/cuarto-cabana.jpg"style="width:100%" onclick="currentSlide(2)" alt="Cabin">
+      <img class="room-image-3 cursor" src="../static/img/cuarto-cabana.jpg"style="width:100%" onclick="currentSlideThree(3)" alt="Cabin">
     </div>
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/c.jpg" style="width:100%" onclick="currentSlide(3)" alt="cabin">
+      <img class="room-image-3 cursor" src="../static/img/c.jpg" style="width:100%" onclick="currentSlideThree(4)" alt="cabin">
     </div>
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/lejos.jpg" style="width:100%" onclick="currentSlide(4)" alt="cabin">
+      <img class="room-image-3 cursor" src="../static/img/lejos.jpg" style="width:100%" onclick="currentSlideThree(5)" alt="cabin">
     </div>
     <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/vista-cabana.jpg" style="width:100%" onclick="currentSlide(5)" alt="cabin">
+      <img class="room-image-3 cursor" src="../static/img/vista-cabana.jpg" style="width:100%" onclick="currentSlideThree(6)" alt="cabin">
     </div>    
-    <div class="column-3">
-      <img class="room-image-3 cursor" src="../static/img/w.jpg" style="width:100%" onclick="currentSlide(6)" alt="cabin">
-    </div>
     </div>
       <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
     </div>
@@ -478,22 +481,22 @@ h3{
   <div class="row move-images">
      <div class="col-lg-11 col-md-11 col-sm-12">
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/playa-9.jpg" style="width:100%" onclick="currentSlide(1)" alt="camp">
+      <img class="room-image-4 cursor" src="../static/img-room/playa-9.jpg" style="width:100%" onclick="currentSlideFour(1)" alt="camp">
     </div>
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/house-view.jpg" style="width:100%" onclick="currentSlide(2)" alt="Camp">
+      <img class="room-image-4 cursor" src="../static/img-room/house-view.jpg" style="width:100%" onclick="currentSlideFour(2)" alt="Camp">
     </div>
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/camp.jpg" style="width:100%" onclick="currentSlide(3)" alt="camp">
+      <img class="room-image-4 cursor" src="../static/img-room/camp.jpg" style="width:100%" onclick="currentSlideFour(3)" alt="camp">
     </div>
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/sona-cam-1.jpg" style="width:100%" onclick="currentSlide(4)" alt="camp">
+      <img class="room-image-4 cursor" src="../static/img-room/sona-cam-1.jpg" style="width:100%" onclick="currentSlideFour(4)" alt="camp">
     </div>
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/sona-camp.jpg" style="width:100%" onclick="currentSlide(5)" alt="camp">
+      <img class="room-image-4 cursor" src="../static/img-room/sona-camp.jpg" style="width:100%" onclick="currentSlideFour(5)" alt="camp">
     </div>    
     <div class="column-4">
-      <img class="room-image-4 cursor" src="../static/img-room/rio.jpg" style="width:100%" onclick="currentSlide(6)" alt="camp">
+      <img class="room-image-4 cursor" src="../static/img-room/rio.jpg" style="width:100%" onclick="currentSlideFour(6)" alt="camp">
     </div>
     </div>
       <a class="btn btn-primary float-left col-sm-6 col-md-4 col-lg-4" href="{{url_for('contact')}}">Contact Us</a>
